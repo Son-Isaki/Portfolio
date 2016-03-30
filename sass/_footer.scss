@@ -1,0 +1,101 @@
+footer {
+  background-color: $dkgray;
+  color: $white;
+
+  /* Le formulaire de contact */
+  form {
+    display: flex;
+    justify-content: space-around;
+    flex: 1 100%;
+    padding: 60px;
+    max-width: 800px;
+    margin: auto;
+
+    div.column {
+      width: 100%;
+      margin: 0 20px;
+
+      div.group {
+        margin: 0 0 20px;
+        width: 100%;
+        overflow: auto;
+        padding-bottom: 30px;
+        position: relative;
+
+        label {
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        input, textarea {
+          display: block;
+          background-color: transparent;
+          border: 1px solid $gray;
+          color: $white;
+          padding: 0 10px;
+          box-sizing: border-box;
+          font-size: 1rem;
+          outline: none;
+          width: 100%;
+
+          transition: border-color ease 300ms;
+
+          &:focus {
+            border-color: $white;
+          }
+        }
+
+        input {
+          height: 30px;
+        }
+
+        textarea {
+          padding: 10px;
+          height: 140px;
+          max-height: 140px;
+          max-width: 100%;
+        }
+
+        button {
+          display: block;
+          background-color: transparent;
+          border: 2px solid $green;
+          margin: 0;
+          padding: 10px 30px;
+          font-size: 1rem;
+          color: $white;
+          cursor: pointer;
+
+          transition: background-color ease 300ms;
+
+          &:hover {
+            background-color: $green;
+          }
+        }
+
+        p.form-error {
+          color: $red;
+          font-weight: 400;
+          font-size: 1rem;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          margin: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  /* Les mentions */
+  section.mentions {
+    background-color: $black;
+    padding: 15px;
+    text-align: center;
+    color: $ltgray;
+    font-weight: 400;
+  }
+}

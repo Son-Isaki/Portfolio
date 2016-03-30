@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 800 500" style="enable-background:new 0 0 800 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#060607;stroke:#CCCCCC;stroke-width:4;stroke-miterlimit:10;}
+	.st1{fill:#A6A8AB;}
+	.st2{fill:#E6E8EA;}
+	.st3{fill:#E14B3C;}
+	.st4{fill:#575A5E;}
+	.st5{fill:#CCCCCC;}
+	.st6{fill:#F3BA36;}
+	.st7{fill:#24AD55;}
+	.st8{fill:#060607;}
+</style>
+<path id="screen" class="st0" d="M658.3,428.9H141.7c-9.4,0-17-7.7-17-17V74.2c0-9.4,7.7-17,17-17h516.5c9.4,0,17,7.7,17,17v337.6
+	C675.3,421.2,667.6,428.9,658.3,428.9z"/>
+<path id="under_base" class="st1" d="M32.3,433.4c7.5,7.4,20.9,11.1,44,11.7c19.9,0.2,627.4,0.2,647.3,0c23.2-0.6,36.5-4.3,44-11.7
+	C752.4,433.4,47.6,433.4,32.3,433.4z"/>
+<rect id="base" x="32.3" y="414.2" class="st2" width="735.3" height="19.2"/>
+<path id="base_opening" class="st1" d="M358,423.6H442c4.4,0,8-3.6,8-8v-1.5h-99.9v1.5C350.1,420,353.7,423.6,358,423.6z"/>
+<rect id="desktop" x="147.6" y="82.2" class="st3" width="504.7" height="311"/>
+<rect id="status_bar" x="147.6" y="82.2" class="st2" width="504.7" height="7.5"/>
+<circle id="camera" class="st4" cx="400" cy="69.5" r="1.6"/>
+<rect id="app_bar" x="221.2" y="368" class="st1" width="357.6" height="25.2"/>
+<g id="applications">
+	<g id="bin">
+		<path class="st2" d="M560.3,371.9c-3.8,0-6.8,0.8-6.8,1.9l1.9,14.2c0,0.8,2.2,1.5,4.9,1.5s4.9-0.7,4.9-1.5l1.9-14.2
+			C567.1,372.7,564.1,371.9,560.3,371.9z"/>
+	</g>
+	<rect x="282.4" y="373.4" class="st2" width="16.3" height="14.4"/>
+	<rect x="304.8" y="373.4" class="st2" width="16.3" height="14.4"/>
+	<rect x="328.4" y="373.4" class="st2" width="16.3" height="14.4"/>
+	<rect x="377.9" y="373.4" class="st2" width="16.3" height="14.4"/>
+	<rect x="402.6" y="373.4" class="st2" width="16.3" height="14.4"/>
+	<rect x="499.4" y="373.4" class="st2" width="16.3" height="14.4"/>
+	<rect x="522.8" y="373.4" class="st2" width="16.3" height="14.4"/>
+	<circle class="st2" cx="241.6" cy="380.6" r="8.9"/>
+	<circle class="st2" cx="267" cy="380.6" r="8.9"/>
+	<circle class="st2" cx="361.2" cy="380.6" r="8.9"/>
+	<circle class="st2" cx="460.7" cy="380.6" r="8.9"/>
+	<circle class="st2" cx="483.7" cy="380.6" r="8.9"/>
+	<circle class="st2" cx="435.8" cy="380.6" r="8.9"/>
+</g>
+<g id="window">
+	<rect id="background" x="229.9" y="172.2" class="st5" width="196.9" height="121.2"/>
+	<rect id="status_bar_1_" x="229.9" y="161.4" class="st2" width="196.9" height="10.8"/>
+	<circle class="st3" cx="238.8" cy="166.8" r="3.2"/>
+	<circle class="st6" cx="248.3" cy="166.8" r="3.2"/>
+	<circle class="st7" cx="258" cy="166.8" r="3.2"/>
+</g>
+<g id="terminal">
+	<rect id="background_2_" x="385.3" y="212" class="st8" width="196.9" height="121.2"/>
+	<rect id="status_bar_3_" x="385.3" y="201.2" class="st2" width="196.9" height="10.8"/>
+	<circle class="st3" cx="394.1" cy="206.6" r="3.2"/>
+	<circle class="st6" cx="403.7" cy="206.6" r="3.2"/>
+	<circle class="st7" cx="413.4" cy="206.6" r="3.2"/>
+</g>
+</svg>

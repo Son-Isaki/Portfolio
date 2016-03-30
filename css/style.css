@@ -1,0 +1,438 @@
+@charset "UTF-8";
+/* Variables du projet */
+/* Style général */
+/* line 2, ../sass/_general.scss */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  background-color: #dfe1e1;
+  font-weight: 500;
+  position: relative;
+}
+/* line 11, ../sass/_general.scss */
+body h1 {
+  display: none;
+}
+
+/* line 16, ../sass/_general.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 20, ../sass/_general.scss */
+.red {
+  font-weight: 500;
+  color: #e14b3c;
+}
+
+/* line 25, ../sass/_general.scss */
+.white {
+  color: #dfe1e1;
+}
+
+/* line 29, ../sass/_general.scss */
+div.group {
+  display: inline-block;
+  margin: 50px auto;
+}
+/* line 33, ../sass/_general.scss */
+div.group button {
+  border: none;
+  background-color: #414141;
+  margin: 0;
+  padding: 8px 14px;
+  color: #dfe1e1;
+  font-size: .9rem;
+  cursor: pointer;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: background-color ease 300ms;
+}
+/* line 46, ../sass/_general.scss */
+div.group button:hover {
+  background-color: #e14b3c;
+}
+/* line 50, ../sass/_general.scss */
+div.group button.selected {
+  background-color: #e14b3c;
+  cursor: default;
+}
+/* line 55, ../sass/_general.scss */
+div.group button:first-child {
+  margin-left: 10px;
+}
+/* line 59, ../sass/_general.scss */
+div.group button:last-child {
+  margin-right: 10px;
+}
+
+/* Liste d'éléments façon Pinterest */
+/* line 66, ../sass/_general.scss */
+.item-list {
+  column-width: 250px;
+  column-gap: 20px;
+  padding: 0 20px;
+  font-size: 0;
+}
+/* line 72, ../sass/_general.scss */
+.item-list .item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 20px 0;
+}
+/* line 79, ../sass/_general.scss */
+.item-list .item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: opacity ease 300ms;
+}
+/* line 91, ../sass/_general.scss */
+.item-list .item:hover::after {
+  opacity: .5;
+}
+
+/* line 1, ../sass/_header.scss */
+header {
+  background-color: #dfe1e1;
+  color: #2e2e2e;
+  height: 90vh;
+  position: relative;
+  /* Le menu principal */
+  /* Le text d'introduction */
+  /* La flèche pour descendre */
+}
+/* line 7, ../sass/_header.scss */
+header h2 {
+  display: none;
+}
+/* line 12, ../sass/_header.scss */
+header nav {
+  height: 20%;
+  width: 100%;
+  padding: 0 20%;
+  box-sizing: border-box;
+  position: relative;
+  /* Le curseur en dessous du menu */
+  /* Lorsque le menu est en 'sticky' en haut de la fenêtre */
+}
+/* line 19, ../sass/_header.scss */
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  height: 100%;
+}
+/* line 30, ../sass/_header.scss */
+header nav ul li a {
+  padding: 20px;
+  color: #2e2e2e;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 36, ../sass/_header.scss */
+header nav ul li a.current {
+  font-weight: 500;
+}
+/* line 40, ../sass/_header.scss */
+header nav ul li a:hover {
+  color: #2e2e2e;
+}
+/* line 48, ../sass/_header.scss */
+header nav div.cursor {
+  width: 100px;
+  height: 4px;
+  background-color: #e14b3c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: left ease 300ms, width ease 300ms;
+}
+/* line 60, ../sass/_header.scss */
+header nav.sticky {
+  position: fixed;
+  z-index: 100;
+  background-color: #dfe1e1;
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 0 5px 5px rgba(65, 65, 65, 0.3);
+}
+/* line 71, ../sass/_header.scss */
+header section.intro {
+  height: 80%;
+  text-align: center;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+}
+/* line 81, ../sass/_header.scss */
+header section.intro p {
+  font-size: 1.4rem;
+  margin: 0;
+  line-height: 2;
+}
+/* line 86, ../sass/_header.scss */
+header section.intro p.big {
+  font-size: 4.6rem;
+}
+/* line 91, ../sass/_header.scss */
+header section.intro button {
+  background-color: transparent;
+  border: 2px solid #dfe1e1;
+  padding: 10px 20px;
+  color: #dfe1e1;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+/* line 100, ../sass/_header.scss */
+header section.intro button:hover {
+  cursor: pointer;
+}
+/* line 107, ../sass/_header.scss */
+header a.next {
+  background-color: #24ad56;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 10;
+}
+/* line 118, ../sass/_header.scss */
+header a.next::after {
+  content: url(../css/images/next.svg);
+}
+/* line 122, ../sass/_header.scss */
+header a.next:hover {
+  cursor: pointer;
+}
+
+/* line 1, ../sass/_main.scss */
+main {
+  background-color: #696969;
+  /* La partie projets de la page */
+  /* La partie à propos de la page */
+  /* La partie compétences de la page */
+}
+/* line 5, ../sass/_main.scss */
+main section.projects {
+  background-color: #2e2e2e;
+  padding: 80px;
+}
+/* line 9, ../sass/_main.scss */
+main section.projects div.filters, main section.projects div.pagination {
+  text-align: center;
+}
+/* line 14, ../sass/_main.scss */
+main section.projects div.container article {
+  background-color: #dfe1e1;
+  padding: 15px;
+  box-sizing: border-box;
+}
+/* line 19, ../sass/_main.scss */
+main section.projects div.container article img {
+  width: 100%;
+  filter: brightness(1.3) contrast(1.2) grayscale(0) hue-rotate(0deg) invert(0.1) saturate(1.8) sepia(0);
+  -webkit-filter: brightness(1) contrast(1.2) grayscale(0) hue-rotate(0deg) invert(0.1) saturate(1.8) sepia(0);
+}
+/* line 26, ../sass/_main.scss */
+main section.projects div.container article h2, main section.projects div.container article p, main section.projects div.container article button {
+  font-weight: 400;
+  margin: 10px 0;
+  display: block;
+}
+/* line 32, ../sass/_main.scss */
+main section.projects div.container article h2 {
+  font-size: 1.4rem;
+  color: #e14b3c;
+}
+/* line 37, ../sass/_main.scss */
+main section.projects div.container article p {
+  font-size: .8rem;
+  text-transform: uppercase;
+}
+/* line 42, ../sass/_main.scss */
+main section.projects div.container article button {
+  background-color: #24ad56;
+  border: none;
+  padding: 10px;
+  font-size: .8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #dfe1e1;
+  margin: auto;
+  width: 100%;
+  cursor: pointer;
+}
+/* line 59, ../sass/_main.scss */
+main section.about {
+  background-color: #f2f2f2;
+  padding: 100px 10%;
+  color: #2e2e2e;
+  font-weight: 400;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* line 71, ../sass/_main.scss */
+main section.about img, main section.about p {
+  width: 50%;
+  text-align: center;
+  margin: 20px 0;
+}
+/* line 79, ../sass/_main.scss */
+main section.skills {
+  background-color: #e14b3c;
+  display: flex;
+  justify-content: center;
+  padding: 80px 120px;
+  flex: 1 100%;
+  flex-wrap: wrap;
+}
+/* line 87, ../sass/_main.scss */
+main section.skills article {
+  width: 15%;
+  text-align: center;
+  margin: 40px;
+}
+/* line 92, ../sass/_main.scss */
+main section.skills article img.logo, main section.skills article i {
+  width: 100px;
+  height: 100px;
+  background-color: #dfe1e1;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+/* line 100, ../sass/_main.scss */
+main section.skills article i {
+  line-height: 100px;
+  color: #1e1e1e;
+}
+/* line 105, ../sass/_main.scss */
+main section.skills article h2 {
+  color: #dfe1e1;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+/* line 1, ../sass/_footer.scss */
+footer {
+  background-color: #2e2e2e;
+  color: #dfe1e1;
+  /* Le formulaire de contact */
+  /* Les mentions */
+}
+/* line 6, ../sass/_footer.scss */
+footer form {
+  display: flex;
+  justify-content: space-around;
+  flex: 1 100%;
+  padding: 60px;
+  max-width: 800px;
+  margin: auto;
+}
+/* line 14, ../sass/_footer.scss */
+footer form div.column {
+  width: 100%;
+  margin: 0 20px;
+}
+/* line 18, ../sass/_footer.scss */
+footer form div.column div.group {
+  margin: 0 0 20px;
+  width: 100%;
+  overflow: auto;
+  padding-bottom: 30px;
+  position: relative;
+}
+/* line 25, ../sass/_footer.scss */
+footer form div.column div.group label {
+  display: block;
+  margin-bottom: 10px;
+}
+/* line 30, ../sass/_footer.scss */
+footer form div.column div.group input, footer form div.column div.group textarea {
+  display: block;
+  background-color: transparent;
+  border: 1px solid #414141;
+  color: #dfe1e1;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  transition: border-color ease 300ms;
+}
+/* line 43, ../sass/_footer.scss */
+footer form div.column div.group input:focus, footer form div.column div.group textarea:focus {
+  border-color: #dfe1e1;
+}
+/* line 48, ../sass/_footer.scss */
+footer form div.column div.group input {
+  height: 30px;
+}
+/* line 52, ../sass/_footer.scss */
+footer form div.column div.group textarea {
+  padding: 10px;
+  height: 140px;
+  max-height: 140px;
+  max-width: 100%;
+}
+/* line 59, ../sass/_footer.scss */
+footer form div.column div.group button {
+  display: block;
+  background-color: transparent;
+  border: 2px solid #24ad56;
+  margin: 0;
+  padding: 10px 30px;
+  font-size: 1rem;
+  color: #dfe1e1;
+  cursor: pointer;
+  transition: background-color ease 300ms;
+}
+/* line 71, ../sass/_footer.scss */
+footer form div.column div.group button:hover {
+  background-color: #24ad56;
+}
+/* line 76, ../sass/_footer.scss */
+footer form div.column div.group p.form-error {
+  color: #e14b3c;
+  font-weight: 400;
+  font-size: 1rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+}
+/* line 86, ../sass/_footer.scss */
+footer form div.column div.group:last-child {
+  margin-bottom: 0;
+}
+/* line 94, ../sass/_footer.scss */
+footer section.mentions {
+  background-color: #1e1e1e;
+  padding: 15px;
+  text-align: center;
+  color: #696969;
+  font-weight: 400;
+}
