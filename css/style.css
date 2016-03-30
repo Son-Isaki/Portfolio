@@ -322,14 +322,13 @@ main section.skills article img.logo, main section.skills article i {
   background-color: #dfe1e1;
   border-radius: 50%;
   margin-bottom: 15px;
-  border: 5px solid #b03f30;
 }
-/* line 101, ../sass/_main.scss */
+/* line 100, ../sass/_main.scss */
 main section.skills article i {
   line-height: 100px;
   color: #1e1e1e;
 }
-/* line 106, ../sass/_main.scss */
+/* line 105, ../sass/_main.scss */
 main section.skills article h2 {
   color: #dfe1e1;
   font-weight: 400;

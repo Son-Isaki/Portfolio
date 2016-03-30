@@ -5,10 +5,11 @@
 $(document).ready(function () {
     // Les variables
     var nav = $("nav");
-    var cursor = nav.find("div.cursor");
-    var menu = nav.find("ul");
-    var menuItems = menu.find("li");
-    var sections = $("header, main > section, footer");
+    var cursor = $("nav > div.cursor");
+    var menu = $("nav > ul");
+    var menuItems = $("nav > ul > li");
+    var sections = $("header, main > section, footer > #contact");
+    var mouseHoverMenu = false;
 
     // Position par défaut
     cursor.css("transition-duration", "0");
@@ -45,15 +46,24 @@ $(document).ready(function () {
         }
     }
 
+    // Au hover du menu
+    menuItems.hover(function () {
+        mouseHoverMenu = true;
+    });
+
     // Si on sort la souris de la zone du menu, on remet le curseur à sa position par défaut
     menu.mouseleave(function () {
+        mouseHoverMenu = false;
         updateCursorPosition();
     });
 
     // Au scroll, on change le type d'affichage du menu
     $(window).scroll(function () {
         switchMenuType();
-        updateCursorPosition();
+
+        if (!mouseHoverMenu) {
+            updateCursorPosition();
+        }
     });
 
     // Changement du type d'affichage du menu
