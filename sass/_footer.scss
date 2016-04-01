@@ -1,129 +1,140 @@
-footer {
-  background-color: $dkgray;
-  color: $white;
+body{
+  footer {
+    background-color: $dkgray;
+    color: $white;
 
-  /* Le formulaire de contact */
-  form {
-    display: flex;
-    justify-content: space-around;
-    flex: 1 100%;
-    padding: 60px;
-    max-width: 800px;
-    margin: auto;
+    /* Le formulaire de contact */
+    form {
+      display: flex;
+      justify-content: space-around;
+      padding: 60px;
+      max-width: 800px;
+      margin: auto;
+      flex-wrap: wrap;
 
-    div.column {
-      width: 100%;
-      margin: 0 20px;
+      h2 {
+        flex: 1 100%;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 50px;
+      }
 
-      div.group {
-        margin: 0 0 20px;
-        width: 100%;
-        overflow: auto;
-        padding-bottom: 30px;
-        position: relative;
+      div.column {
+        margin: 0 20px;
+        flex: 1 calc(50% - 40px);
+        box-sizing: border-box;
 
-        label {
-          display: block;
-          margin-bottom: 10px;
-        }
-
-        input, textarea {
-          display: block;
-          background-color: transparent;
-          border: 1px solid $gray;
-          color: $white;
-          padding: 0 10px;
-          box-sizing: border-box;
-          font-size: 1rem;
-          outline: none;
+        div.group {
+          margin: 0 0 20px;
           width: 100%;
+          overflow: auto;
+          padding-bottom: 30px;
+          position: relative;
 
-          transition: border-color ease 300ms;
-
-          &:focus {
-            border-color: $white;
+          label {
+            display: block;
+            margin-bottom: 10px;
           }
-        }
 
-        input {
-          height: 30px;
-        }
+          input, textarea {
+            display: block;
+            background-color: transparent;
+            border: 1px solid $gray;
+            color: $white;
+            padding: 0 10px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            outline: none;
+            width: 100%;
 
-        textarea {
-          padding: 10px;
-          height: 140px;
-          max-height: 140px;
-          max-width: 100%;
-        }
+            transition: border-color ease 300ms;
 
-        button {
-          display: block;
-          background-color: transparent;
-          border: 2px solid $green;
-          margin: 0;
-          padding: 10px 30px;
-          font-size: 1rem;
-          color: $white;
-          cursor: pointer;
-
-          transition: background-color ease 300ms;
-
-          &:hover {
-            background-color: $green;
+            &:focus {
+              border-color: $white;
+            }
           }
-        }
 
-        p.form-error {
-          color: $red;
-          font-weight: 400;
-          font-size: 1rem;
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          margin: 0;
-        }
+          input {
+            height: 30px;
+          }
 
-        &:last-child {
-          margin-bottom: 0;
+          textarea {
+            padding: 10px;
+            height: 140px;
+            max-height: 140px;
+            max-width: 100%;
+          }
+
+          button {
+            display: block;
+            background-color: transparent;
+            border: 2px solid $green;
+            margin: 0;
+            padding: 10px 30px;
+            font-size: 1rem;
+            color: $white;
+            cursor: pointer;
+
+            transition: background-color ease 300ms;
+
+            &:hover {
+              background-color: $green;
+            }
+          }
+
+          p.form-error {
+            color: $red;
+            font-weight: 400;
+            font-size: 1rem;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            margin: 0;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
       }
     }
-  }
 
-  /* Les réseaux sociaux */
-  section.social {
-    background-color: $white;
-    display: flex;
-    justify-content: space-around;
-    padding: 30px 20% 60px;
-    flex-wrap: wrap;
+    /* Les réseaux sociaux */
+    section.social {
+      background-color: $white;
+      display: flex;
+      justify-content: space-around;
+      padding: 30px 20% 60px;
+      flex-wrap: wrap;
 
-    h2 {
-      flex: 1 100%;
-      color: $red;
-      font-weight: 400;
+      h2 {
+        flex: 1 100%;
+        color: $red;
+        text-align: center;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+      }
+
+      i {
+        color: $white-gray;
+
+        transition: color ease 600ms;
+
+        &:hover {
+          color: $ltgray;
+        }
+      }
+    }
+
+    /* Les mentions */
+    section.mentions {
+      background-color: $black;
+      padding: 0 20%;
       text-align: center;
-      margin-bottom: 50px;
-      text-transform: uppercase;
+      color: $ltgray;
+      font-weight: 400;
+      height: 50px;
+      line-height: 50px;
     }
-
-    i {
-      color: $white-gray;
-
-      transition: color ease 600ms;
-
-      &:hover {
-        color: $ltgray;
-      }
-    }
-  }
-
-  /* Les mentions */
-  section.mentions {
-    background-color: $black;
-    padding: 15px;
-    text-align: center;
-    color: $ltgray;
-    font-weight: 400;
   }
 }

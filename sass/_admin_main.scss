@@ -1,0 +1,180 @@
+body.admin {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  header, footer {
+    flex: 1 100%;
+  }
+
+  aside, main {
+    height: calc(100vh - 110px);
+  }
+
+  header {
+    background-color: $black;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+
+    div.brand {
+      height: 60px;
+
+      & > * {
+        display: inline-block;
+        padding: 0 10px;
+        height: 60px;
+        line-height: 60px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 1.8rem;
+      }
+
+      a {
+        color: $green;
+        text-decoration: none;
+
+        i {
+          margin-left: 10px;
+        }
+
+        &:hover {
+          color: $dkgreen;
+        }
+      }
+    }
+
+    nav.user {
+
+      &:hover {
+        ul {
+          display: block;
+          opacity: 1;
+        }
+
+        span {
+          color: $green;
+
+          i {
+            color: $green;
+          }
+        }
+      }
+
+      span {
+        height: 60px;
+        line-height: 60px;
+        cursor: pointer;
+
+        i {
+          margin-left: 10px;
+        }
+      }
+
+      ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        opacity: 0;
+        background-color: $white;
+        box-shadow: 0 0 5px 5px rgba($gray, .5);
+
+        transition: opacity ease 300ms;
+
+        li {
+          width: auto;
+
+          a {
+            color: $black;
+            text-decoration: none;
+            display: block;
+            min-width: 150px;
+            padding: 10px 20px;
+            text-align: right;
+
+            &:hover {
+              background-color: $white-gray;
+            }
+
+            i {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  aside {
+    background-color: $dkgray;
+
+    nav.main {
+      h2 {
+        display: none;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          position: relative;
+
+          a {
+            color: $white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            width: 200px;
+            box-sizing: border-box;
+            height: 40px;
+            line-height: 20px;
+
+            &:hover {
+              background-color: $dkgreen;
+            }
+
+            i {
+              margin-right: 10px;
+            }
+          }
+
+          &:hover {
+            ul {
+              display: block;
+            }
+          }
+
+          ul {
+            position: absolute;
+            top: 0;
+            left: 200px;
+            display: none;
+            background-color: $dkgray;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    background-color: $white;
+    flex: 1 80%;
+    overflow: scroll;
+  }
+
+  footer {
+    background-color: $green;
+  }
+}

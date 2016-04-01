@@ -6,38 +6,43 @@ body {
   margin: 0;
   padding: 0;
   font-family: Roboto, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   background-color: #dfe1e1;
   font-weight: 500;
   position: relative;
 }
-/* line 11, ../sass/_general.scss */
-body h1 {
+/* line 12, ../sass/_general.scss */
+body.home h2, body.home h3 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+/* line 17, ../sass/_general.scss */
+body.home h1 {
   display: none;
 }
 
-/* line 16, ../sass/_general.scss */
+/* line 23, ../sass/_general.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 20, ../sass/_general.scss */
+/* line 27, ../sass/_general.scss */
 .red {
   font-weight: 500;
   color: #e14b3c;
 }
 
-/* line 25, ../sass/_general.scss */
+/* line 32, ../sass/_general.scss */
 .white {
   color: #dfe1e1;
 }
 
-/* line 29, ../sass/_general.scss */
+/* line 36, ../sass/_general.scss */
 div.group {
   display: inline-block;
   margin: 50px auto;
 }
-/* line 33, ../sass/_general.scss */
+/* line 40, ../sass/_general.scss */
 div.group button {
   border: none;
   background-color: #414141;
@@ -50,33 +55,33 @@ div.group button {
   text-transform: uppercase;
   transition: background-color ease 300ms;
 }
-/* line 46, ../sass/_general.scss */
+/* line 53, ../sass/_general.scss */
 div.group button:hover {
   background-color: #e14b3c;
 }
-/* line 50, ../sass/_general.scss */
+/* line 57, ../sass/_general.scss */
 div.group button.selected {
   background-color: #e14b3c;
   cursor: default;
 }
-/* line 55, ../sass/_general.scss */
+/* line 62, ../sass/_general.scss */
 div.group button:first-child {
   margin-left: 10px;
 }
-/* line 59, ../sass/_general.scss */
+/* line 66, ../sass/_general.scss */
 div.group button:last-child {
   margin-right: 10px;
 }
 
 /* Liste d'éléments façon Pinterest */
-/* line 66, ../sass/_general.scss */
+/* line 73, ../sass/_general.scss */
 .item-list {
   column-width: 250px;
   column-gap: 20px;
   padding: 0 20px;
   font-size: 0;
 }
-/* line 72, ../sass/_general.scss */
+/* line 79, ../sass/_general.scss */
 .item-list .item {
   position: relative;
   display: inline-block;
@@ -84,7 +89,7 @@ div.group button:last-child {
   height: auto;
   margin: 0 0 20px 0;
 }
-/* line 79, ../sass/_general.scss */
+/* line 86, ../sass/_general.scss */
 .item-list .item::after {
   content: '';
   position: absolute;
@@ -95,13 +100,13 @@ div.group button:last-child {
   background-color: transparent;
   transition: opacity ease 300ms;
 }
-/* line 91, ../sass/_general.scss */
+/* line 98, ../sass/_general.scss */
 .item-list .item:hover::after {
   opacity: .5;
 }
 
-/* line 1, ../sass/_header.scss */
-header {
+/* line 2, ../sass/_home_header.scss */
+body.home header {
   background-color: #dfe1e1;
   color: #2e2e2e;
   height: 90vh;
@@ -110,12 +115,12 @@ header {
   /* Le text d'introduction */
   /* La flèche pour descendre */
 }
-/* line 7, ../sass/_header.scss */
-header h2 {
+/* line 8, ../sass/_home_header.scss */
+body.home header h2 {
   display: none;
 }
-/* line 12, ../sass/_header.scss */
-header nav {
+/* line 13, ../sass/_home_header.scss */
+body.home header nav {
   height: 20%;
   width: 100%;
   padding: 0 20%;
@@ -124,8 +129,8 @@ header nav {
   /* Le curseur en dessous du menu */
   /* Lorsque le menu est en 'sticky' en haut de la fenêtre */
 }
-/* line 19, ../sass/_header.scss */
-header nav ul {
+/* line 20, ../sass/_home_header.scss */
+body.home header nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -135,23 +140,23 @@ header nav ul {
   font-weight: 400;
   height: 100%;
 }
-/* line 30, ../sass/_header.scss */
-header nav ul li a {
+/* line 31, ../sass/_home_header.scss */
+body.home header nav ul li a {
   padding: 20px;
   color: #2e2e2e;
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 36, ../sass/_header.scss */
-header nav ul li a.current {
+/* line 37, ../sass/_home_header.scss */
+body.home header nav ul li a.current {
   font-weight: 500;
 }
-/* line 40, ../sass/_header.scss */
-header nav ul li a:hover {
+/* line 41, ../sass/_home_header.scss */
+body.home header nav ul li a:hover {
   color: #2e2e2e;
 }
-/* line 48, ../sass/_header.scss */
-header nav div.cursor {
+/* line 49, ../sass/_home_header.scss */
+body.home header nav div.cursor {
   width: 100px;
   height: 4px;
   background-color: #e14b3c;
@@ -160,8 +165,8 @@ header nav div.cursor {
   left: 0;
   transition: left ease 300ms, width ease 300ms;
 }
-/* line 60, ../sass/_header.scss */
-header nav.sticky {
+/* line 61, ../sass/_home_header.scss */
+body.home header nav.sticky {
   position: fixed;
   z-index: 100;
   background-color: #dfe1e1;
@@ -169,8 +174,8 @@ header nav.sticky {
   height: 70px;
   box-shadow: 0 0 5px 5px rgba(65, 65, 65, 0.3);
 }
-/* line 71, ../sass/_header.scss */
-header section.intro {
+/* line 72, ../sass/_home_header.scss */
+body.home header section.intro {
   height: 80%;
   text-align: center;
   font-weight: 400;
@@ -180,18 +185,18 @@ header section.intro {
   padding-bottom: 100px;
   box-sizing: border-box;
 }
-/* line 81, ../sass/_header.scss */
-header section.intro p {
+/* line 82, ../sass/_home_header.scss */
+body.home header section.intro p {
   font-size: 1.4rem;
   margin: 0;
   line-height: 2;
 }
-/* line 86, ../sass/_header.scss */
-header section.intro p.big {
+/* line 87, ../sass/_home_header.scss */
+body.home header section.intro p.big {
   font-size: 4.6rem;
 }
-/* line 91, ../sass/_header.scss */
-header section.intro button {
+/* line 92, ../sass/_home_header.scss */
+body.home header section.intro button {
   background-color: transparent;
   border: 2px solid #dfe1e1;
   padding: 10px 20px;
@@ -200,12 +205,12 @@ header section.intro button {
   font-size: 1rem;
   font-weight: 500;
 }
-/* line 100, ../sass/_header.scss */
-header section.intro button:hover {
+/* line 101, ../sass/_home_header.scss */
+body.home header section.intro button:hover {
   cursor: pointer;
 }
-/* line 107, ../sass/_header.scss */
-header a.next {
+/* line 108, ../sass/_home_header.scss */
+body.home header a.next {
   background-color: #24ad56;
   width: 60px;
   height: 60px;
@@ -216,61 +221,61 @@ header a.next {
   transform: translate(-50%, 50%);
   z-index: 10;
 }
-/* line 118, ../sass/_header.scss */
-header a.next::after {
+/* line 119, ../sass/_home_header.scss */
+body.home header a.next::after {
   content: url(../css/images/next.svg);
 }
-/* line 122, ../sass/_header.scss */
-header a.next:hover {
+/* line 123, ../sass/_home_header.scss */
+body.home header a.next:hover {
   cursor: pointer;
 }
 
-/* line 1, ../sass/_main.scss */
-main {
+/* line 2, ../sass/_home_main.scss */
+body.home main {
   background-color: #696969;
   /* La partie projets de la page */
   /* La partie à propos de la page */
   /* La partie compétences de la page */
 }
-/* line 5, ../sass/_main.scss */
-main section.projects {
+/* line 6, ../sass/_home_main.scss */
+body.home main section.projects {
   background-color: #2e2e2e;
   padding: 80px;
 }
-/* line 9, ../sass/_main.scss */
-main section.projects div.filters, main section.projects div.pagination {
+/* line 10, ../sass/_home_main.scss */
+body.home main section.projects div.filters, body.home main section.projects div.pagination {
   text-align: center;
 }
-/* line 14, ../sass/_main.scss */
-main section.projects div.container article {
+/* line 15, ../sass/_home_main.scss */
+body.home main section.projects div.container article {
   background-color: #dfe1e1;
   padding: 15px;
   box-sizing: border-box;
 }
-/* line 19, ../sass/_main.scss */
-main section.projects div.container article img {
+/* line 20, ../sass/_home_main.scss */
+body.home main section.projects div.container article img {
   width: 100%;
   filter: brightness(1.3) contrast(1.2) grayscale(0) hue-rotate(0deg) invert(0.1) saturate(1.8) sepia(0);
   -webkit-filter: brightness(1) contrast(1.2) grayscale(0) hue-rotate(0deg) invert(0.1) saturate(1.8) sepia(0);
 }
-/* line 26, ../sass/_main.scss */
-main section.projects div.container article h2, main section.projects div.container article p, main section.projects div.container article button {
+/* line 27, ../sass/_home_main.scss */
+body.home main section.projects div.container article h2, body.home main section.projects div.container article p, body.home main section.projects div.container article button {
   font-weight: 400;
   margin: 10px 0;
   display: block;
 }
-/* line 32, ../sass/_main.scss */
-main section.projects div.container article h2 {
+/* line 33, ../sass/_home_main.scss */
+body.home main section.projects div.container article h2 {
   font-size: 1.4rem;
   color: #e14b3c;
 }
-/* line 37, ../sass/_main.scss */
-main section.projects div.container article p {
+/* line 38, ../sass/_home_main.scss */
+body.home main section.projects div.container article p {
   font-size: .8rem;
   text-transform: uppercase;
 }
-/* line 42, ../sass/_main.scss */
-main section.projects div.container article button {
+/* line 43, ../sass/_home_main.scss */
+body.home main section.projects div.container article button {
   background-color: #24ad56;
   border: none;
   padding: 10px;
@@ -282,9 +287,9 @@ main section.projects div.container article button {
   width: 100%;
   cursor: pointer;
 }
-/* line 59, ../sass/_main.scss */
-main section.about {
-  background-color: #f2f2f2;
+/* line 60, ../sass/_home_main.scss */
+body.home main section.about {
+  background-color: #dfe1e1;
   padding: 100px 10%;
   color: #2e2e2e;
   font-weight: 400;
@@ -294,14 +299,14 @@ main section.about {
   align-items: center;
   flex-wrap: wrap;
 }
-/* line 71, ../sass/_main.scss */
-main section.about img, main section.about p {
+/* line 72, ../sass/_home_main.scss */
+body.home main section.about img, body.home main section.about p {
   width: 50%;
   text-align: center;
   margin: 20px 0;
 }
-/* line 79, ../sass/_main.scss */
-main section.skills {
+/* line 80, ../sass/_home_main.scss */
+body.home main section.skills {
   background-color: #e14b3c;
   display: flex;
   justify-content: center;
@@ -309,70 +314,77 @@ main section.skills {
   flex: 1 100%;
   flex-wrap: wrap;
 }
-/* line 87, ../sass/_main.scss */
-main section.skills article {
+/* line 88, ../sass/_home_main.scss */
+body.home main section.skills article {
   width: 15%;
   text-align: center;
   margin: 40px;
 }
-/* line 92, ../sass/_main.scss */
-main section.skills article img.logo, main section.skills article i {
+/* line 93, ../sass/_home_main.scss */
+body.home main section.skills article img.logo, body.home main section.skills article i {
   width: 100px;
   height: 100px;
   background-color: #dfe1e1;
   border-radius: 50%;
   margin-bottom: 15px;
 }
-/* line 100, ../sass/_main.scss */
-main section.skills article i {
+/* line 101, ../sass/_home_main.scss */
+body.home main section.skills article i {
   line-height: 100px;
   color: #1e1e1e;
 }
-/* line 105, ../sass/_main.scss */
-main section.skills article h2 {
+/* line 106, ../sass/_home_main.scss */
+body.home main section.skills article h2 {
   color: #dfe1e1;
-  font-weight: 400;
   text-transform: uppercase;
   font-size: 1.2rem;
 }
 
-/* line 1, ../sass/_footer.scss */
-footer {
+/* line 2, ../sass/_footer.scss */
+body footer {
   background-color: #2e2e2e;
   color: #dfe1e1;
   /* Le formulaire de contact */
   /* Les réseaux sociaux */
   /* Les mentions */
 }
-/* line 6, ../sass/_footer.scss */
-footer form {
+/* line 7, ../sass/_footer.scss */
+body footer form {
   display: flex;
   justify-content: space-around;
-  flex: 1 100%;
   padding: 60px;
   max-width: 800px;
   margin: auto;
+  flex-wrap: wrap;
 }
-/* line 14, ../sass/_footer.scss */
-footer form div.column {
-  width: 100%;
+/* line 15, ../sass/_footer.scss */
+body footer form h2 {
+  flex: 1 100%;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 50px;
+}
+/* line 22, ../sass/_footer.scss */
+body footer form div.column {
   margin: 0 20px;
+  flex: 1 calc(50% - 40px);
+  box-sizing: border-box;
 }
-/* line 18, ../sass/_footer.scss */
-footer form div.column div.group {
+/* line 27, ../sass/_footer.scss */
+body footer form div.column div.group {
   margin: 0 0 20px;
   width: 100%;
   overflow: auto;
   padding-bottom: 30px;
   position: relative;
 }
-/* line 25, ../sass/_footer.scss */
-footer form div.column div.group label {
+/* line 34, ../sass/_footer.scss */
+body footer form div.column div.group label {
   display: block;
   margin-bottom: 10px;
 }
-/* line 30, ../sass/_footer.scss */
-footer form div.column div.group input, footer form div.column div.group textarea {
+/* line 39, ../sass/_footer.scss */
+body footer form div.column div.group input, body footer form div.column div.group textarea {
   display: block;
   background-color: transparent;
   border: 1px solid #414141;
@@ -384,23 +396,23 @@ footer form div.column div.group input, footer form div.column div.group textare
   width: 100%;
   transition: border-color ease 300ms;
 }
-/* line 43, ../sass/_footer.scss */
-footer form div.column div.group input:focus, footer form div.column div.group textarea:focus {
+/* line 52, ../sass/_footer.scss */
+body footer form div.column div.group input:focus, body footer form div.column div.group textarea:focus {
   border-color: #dfe1e1;
 }
-/* line 48, ../sass/_footer.scss */
-footer form div.column div.group input {
+/* line 57, ../sass/_footer.scss */
+body footer form div.column div.group input {
   height: 30px;
 }
-/* line 52, ../sass/_footer.scss */
-footer form div.column div.group textarea {
+/* line 61, ../sass/_footer.scss */
+body footer form div.column div.group textarea {
   padding: 10px;
   height: 140px;
   max-height: 140px;
   max-width: 100%;
 }
-/* line 59, ../sass/_footer.scss */
-footer form div.column div.group button {
+/* line 68, ../sass/_footer.scss */
+body footer form div.column div.group button {
   display: block;
   background-color: transparent;
   border: 2px solid #24ad56;
@@ -411,12 +423,12 @@ footer form div.column div.group button {
   cursor: pointer;
   transition: background-color ease 300ms;
 }
-/* line 71, ../sass/_footer.scss */
-footer form div.column div.group button:hover {
+/* line 80, ../sass/_footer.scss */
+body footer form div.column div.group button:hover {
   background-color: #24ad56;
 }
-/* line 76, ../sass/_footer.scss */
-footer form div.column div.group p.form-error {
+/* line 85, ../sass/_footer.scss */
+body footer form div.column div.group p.form-error {
   color: #e14b3c;
   font-weight: 400;
   font-size: 1rem;
@@ -425,41 +437,42 @@ footer form div.column div.group p.form-error {
   bottom: 0;
   margin: 0;
 }
-/* line 86, ../sass/_footer.scss */
-footer form div.column div.group:last-child {
+/* line 95, ../sass/_footer.scss */
+body footer form div.column div.group:last-child {
   margin-bottom: 0;
 }
-/* line 94, ../sass/_footer.scss */
-footer section.social {
+/* line 103, ../sass/_footer.scss */
+body footer section.social {
   background-color: #dfe1e1;
   display: flex;
   justify-content: space-around;
   padding: 30px 20% 60px;
   flex-wrap: wrap;
 }
-/* line 101, ../sass/_footer.scss */
-footer section.social h2 {
+/* line 110, ../sass/_footer.scss */
+body footer section.social h2 {
   flex: 1 100%;
   color: #e14b3c;
-  font-weight: 400;
   text-align: center;
   margin-bottom: 50px;
   text-transform: uppercase;
 }
-/* line 110, ../sass/_footer.scss */
-footer section.social i {
+/* line 118, ../sass/_footer.scss */
+body footer section.social i {
   color: #c2c2c2;
   transition: color ease 600ms;
 }
-/* line 115, ../sass/_footer.scss */
-footer section.social i:hover {
+/* line 123, ../sass/_footer.scss */
+body footer section.social i:hover {
   color: #696969;
 }
-/* line 122, ../sass/_footer.scss */
-footer section.mentions {
+/* line 130, ../sass/_footer.scss */
+body footer section.mentions {
   background-color: #1e1e1e;
-  padding: 15px;
+  padding: 0 20%;
   text-align: center;
   color: #696969;
   font-weight: 400;
+  height: 50px;
+  line-height: 50px;
 }
