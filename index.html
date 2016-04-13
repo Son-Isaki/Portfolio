@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Romain Tiger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Fichiers CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/fonts/Roboto/roboto.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!--Fichiers Javascript-->
     <script src="js/jQuery/jquery.js"></script>
     <script src="js/modernizr-custom.min.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/gallery.js"></script>
     <script src="js/smooth-scroll.js"></script>
     <script src="js/reveal-on-scroll.js"></script>
 </head>
 
-<body class="home">
+<body>
 <h1>Romain Tiger | Portfolio</h1>
 <header id="intro">
     <!--Le menu principal-->
     <nav>
         <h2>Menu principal</h2>
         <ul>
-            <li><a href="#intro" class="current">Welcome</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#intro" class="current">Bienvenue</a></li>
+            <li><a href="#about">A propos</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#skills">Compétences</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -37,218 +40,133 @@
 
     <!--Introduction du portfolio-->
     <section class="intro">
-        <p class="big">Hi ! I'm <span class="red">Romain Tiger</span></p>
+        <p class="big">Bonjour !</p>
 
-        <p>Front-end | Back-end <span class="red">developer</span> from Besançon, France</p>
+        <p class="big">Je suis <span class="orange">Romain Tiger</span></p>
+
+        <p><span class="orange">Développeur</span> Front-end | Back-end</p>
 
     </section>
 
-    <a href="#projects" class="next"></a>
+    <a href="#about" class="next"><i class="fa fa-chevron-down fa-2x"></i></a>
 </header>
 
 <main>
-    <!--Liste des projets-->
-    <section id="projects" class="projects">
-        <!--Les filtres-->
-        <div class="filters">
-            <div class="group">
-                <button data-filter="all" class="selected">All</button>
-            </div>
-            <div class="group">
-                <button data-filter="video-games">Video games</button>
-                <button data-filter="web">Web</button>
-                <button data-filter="symfony-2">Symfony 2</button>
-                <button data-filter="vector">Vector</button>
-            </div>
-        </div>
-
-        <!--Les projets-->
-        <div class="container item-list">
-            <article class="item">
-                <img src="images/article-1.jpg" alt="">
-
-                <h2>Title of the super project</h2>
-
-                <div class="separator"></div>
-
-                <p>#tag #tag #tag #tag</p>
-
-                <button type="button">Read more</button>
-            </article>
-
-            <article class="item">
-                <img src="images/article-2.jpg" alt="">
-
-                <h2>Title of the super project</h2>
-
-                <p>#tag #tag #tag #tag</p>
-
-                <button type="button">Read more</button>
-            </article>
-
-            <article class="item">
-                <img src="images/article-3.png" alt="">
-
-                <h2>Title of the super project</h2>
-
-                <p>#tag #tag #tag #tag</p>
-
-                <button type="button">Read more</button>
-            </article>
-
-            <article class="item">
-                <img src="images/article-4.jpg" alt="">
-
-                <h2>Title of the super project</h2>
-
-                <p>#tag #tag #tag #tag</p>
-
-                <button type="button">Read more</button>
-            </article>
-
-            <article class="item">
-                <img src="images/article-2.jpg" alt="">
-
-                <h2>Title of the super project</h2>
-
-                <p>#tag #tag #tag #tag</p>
-
-                <button type="button">Read more</button>
-            </article>
-
-            <article class="item">
-                <img src="images/article-3.png" alt="">
-
-                <h2>Title of the super project</h2>
-
-                <p>#tag #tag #tag #tag</p>
-
-                <button type="button">Read more</button>
-            </article>
-
-            <article class="item">
-                <img src="images/article-4.jpg" alt="">
-
-                <h2>Title of the super project</h2>
-
-                <p>#tag #tag #tag #tag</p>
-
-                <button type="button">Read more</button>
-            </article>
-        </div>
-
-    </section>
-
     <!--Présentation de moi-même-->
     <section id="about" class="about">
         <img src="css/images/mac.svg" alt="MacBook Pro" class="revealOnScroll">
 
-        <p>Web developer, but also <span class="red">web designer</span> !</p>
-
-        <p>Web developer, but also <span class="red">web designer</span> !</p>
+        <p>blah blah, blah blah <span class="white">blah blah</span> !</p>
 
         <img src="css/images/mac.svg" alt="MacBook Pro" class="revealOnScroll">
+
+        <p>blah blah, blah blah <span class="white">blah blah</span> !</p>
+    </section>
+
+    <!--Liste des projets-->
+    <section id="projects" class="projects">
+        <!--Les filtres-->
+        <div class="filters">
+            <button data-filter="all" class="selected">All</button>
+            <button data-filter="video-games">Video games</button>
+            <button data-filter="web">Web</button>
+            <button data-filter="symfony-2">Symfony 2</button>
+            <button data-filter="vector">Vector</button>
+            <button data-filter="video-games">Video games</button>
+            <button data-filter="web">Web</button>
+            <button data-filter="symfony-2">Symfony 2</button>
+            <button data-filter="vector">Vector</button>
+        </div>
+
+        <select class="filters-input">
+            <option data-filter="all">All</option>
+            <option data-filter="video-games">Video games</option>
+            <option data-filter="web">Web</option>
+            <option data-filter="symfony-2">Symfony 2</option>
+            <option data-filter="vector">Vector</option>
+        </select>
+
+        <section class="gallery">
+            <ul>
+                <li class="item"><a href="#" style="background-image: url(images/article-1.jpg);"></a></li><!--
+                --><li class="item"><a href="#" style="background-image: url(images/article-3.png);"></a></li><!--
+                --><li class="item"><a href="#" style="background-image: url(images/article-2.jpg);"></a></li><!--
+                --><li class="item"><a href="#" style="background-image: url(images/article-4.jpg);"></a></li><!--
+                --><li class="item"><a href="#" style="background-image: url(images/article-3.png);"></a></li><!--
+                --><li class="item"><a href="#" style="background-image: url(images/article-1.jpg);"></a></li><!--
+                --><li class="item"><a href="#" style="background-image: url(images/article-2.jpg);"></a></li><!--
+                --><li class="item"><a href="#" style="background-image: url(images/article-4.jpg);"></a></li>
+            </ul>
+        </section>
     </section>
 
     <!--Liste de mes compétences-->
     <section id="skills" class="skills">
-        <article>
-            <img src="css/images/php.svg" alt="Logo de PHP" class="logo">
-
-            <h2>PHP oriented object</h2>
-        </article>
-
-        <article>
-            <i class="fa fa-gamepad fa-2x"></i>
-
-            <h2>C#</h2>
-        </article>
-
-        <article>
-            <img src="css/images/illustrator.svg" alt="Logo d'Illustrator" class="logo">
-
-            <h2>Illustrator</h2>
-        </article>
-
-        <article>
-            <img src="css/images/symfony.svg" alt="Logo de Symfony 2" class="logo">
-
-            <h2>Symfony 2</h2>
-        </article>
-
-        <article>
-            <i class="fa fa-html5 fa-2x"></i>
-
-            <h2>HTML5</h2>
-        </article>
-
-        <article>
-            <i class="fa fa-css3 fa-2x"></i>
-
-            <h2>CSS3</h2>
-        </article>
-
-        <article>
-            <i class="fa fa-database fa-2x"></i>
-
-            <h2>MySql</h2>
-        </article>
-
-        <article>
-            <img src="css/images/jquery.svg" alt="Logo de Jquery" class="logo">
-
-            <h2>Js | jQuery</h2>
-        </article>
+        <ul>
+            <li><h3>PHP</h3></li><!--
+            --><li><h3>C#</h3></li><!--
+            --><li><h3>Illustrator</h3></li><!--
+            --><li><h3>Symfony 2</h3></li><!--
+            --><li><h3>HTML5</h3></li><!--
+            --><li><h3>CSS3</h3></li><!--
+            --><li><h3>MySql</h3></li><!--
+            --><li><h3>jQuery</h3></li>
+        </ul>
     </section>
 </main>
 
 <footer>
     <!--Réseaux sociaux-->
     <section class="social">
-        <h2>Meet me on networks !</h2>
-        <a href="https://github.com/Son-Isaki"><i class="fa fa-github fa-3x"></i></a>
-        <a href="https://fr.linkedin.com/in/romaintiger"><i class="fa fa-linkedin fa-3x"></i></a>
-        <a href="http://son-isaki.deviantart.com"><i class="fa fa-deviantart fa-3x"></i></a>
+        <h2>Retrouvez-moi sur les réseaux !</h2>
+        <ul>
+            <li><a href="https://github.com/Son-Isaki" title="Github"><i class="fa fa-github fa-3x"></i></a></li>
+            <li><a href="https://fr.linkedin.com/in/romaintiger" title="LinkedIn"><i
+                    class="fa fa-linkedin fa-3x"></i></a></li>
+            <li><a href="http://son-isaki.deviantart.com" title="DeviantArt"><i class="fa fa-deviantart fa-3x"></i></a>
+            </li>
+        </ul>
     </section>
 
     <!--Formulaire de contact-->
     <form method="post" action="#" id="contact">
-        <h2>Tell me what you want !</h2>
+        <h2>Contactez-moi !</h2>
 
         <div class="column">
             <div class="group">
-                <label for="name">Your name<span class="red">*</span></label>
+                <label for="name">Votre nom <span class="orange">*</span></label>
                 <input type="text" name="name" id="name">
 
-                <p class="form-error">Please enter your name</p>
+                <p class="form-error">Veuillez entrer votre nom</p>
             </div>
 
             <div class="group">
-                <label for="email">Your email<span class="red">*</span></label>
+                <label for="email">Votre email <span class="orange">*</span></label>
                 <input type="email" name="email" id="email">
 
-                <p class="form-error">This isn't an email address</p>
+                <p class="form-error">Ce n'est pas une adresse email</p>
             </div>
         </div>
 
         <div class="column">
             <div class="group">
-                <label for="message">Your message<span class="red">*</span></label>
+                <label for="message">Votre message <span class="orange">*</span></label>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
 
-                <p class="form-error">Your message is empty</p>
+                <p class="form-error">Votre message est vide</p>
             </div>
 
             <div class="group">
-                <button type="button" name="submit">Send</button>
+                <button type="button" name="submit">Envoyer</button>
             </div>
         </div>
     </form>
 
     <!--Les memtions-->
     <section class="mentions">
-        Developed by <span class="red">Romain Tiger</span> with <span class="red">GIT</span>, <span class="red">Symfony 2</span>
-        and <span class="red">SASS</span> pre-processor
+        Developpé par <span class="white">Romain Tiger</span> grâce à <span
+            class="white">Symfony 2</span>
+        et <span class="white">SASS</span>
     </section>
 </footer>
 </body>

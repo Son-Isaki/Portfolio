@@ -4,15 +4,16 @@
 
 $(document).ready(function () {
     // Les variables
-    var nav = $("nav");
-    var cursor = $("nav > div.cursor");
-    var menu = $("nav > ul");
-    var menuItems = $("nav > ul > li");
-    var sections = $("header, main > section, footer > #contact");
-    var mouseHoverMenu = false;
+    var nav = $("nav"),
+        cursor = $("nav > div.cursor"),
+        menu = $("nav > ul"),
+        menuItems = $("nav > ul > li"),
+        sections = $("header, main > section, footer > #contact"),
+        mouseHoverMenu = false,
+        currentItem = null;
 
     // Position par défaut
-    cursor.css("transition-duration", "0");
+    cursor.css("transition-duration", "0ms");
     updateCursorPosition();
     setTimeout(function () {
         cursor.css("transition-duration", "300ms");
@@ -25,10 +26,12 @@ $(document).ready(function () {
         });
     });
 
+    $(window).resize(function () {
+        setCursorToItem(currentItem);
+    });
+
     // Fonction qui change la position du curseur
     function setCursorToItem(item) {
-        // item = item.find("a");
-
         cursor.css("width", item.width() + "px");
         cursor.css("left", item.offset().left + "px");
         setHeight();
@@ -91,7 +94,8 @@ $(document).ready(function () {
 
             // Si le milieu de l'element se trouve (en ce moment) affiché à l'écran
             if (pos > 0 && pos < windowHeight) {
-                setCursorToItem(menuItems.eq(key));
+                currentItem = menuItems.eq(key);
+                setCursorToItem(currentItem);
             }
         });
     }

@@ -1,0 +1,128 @@
+header {
+  background-color: $white;
+  color: $gray;
+  height: 90vh;
+  position: relative;
+
+  h2 {
+    display: none;
+  }
+
+  /* Le menu principal */
+  nav {
+    height: 20%;
+    width: 100%;
+    padding: 0 20%;
+    box-sizing: border-box;
+    position: relative;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 400;
+      height: 100%;
+
+      li {
+        a {
+          padding: 20px;
+          color: $dkgray;
+          text-decoration: none;
+          text-transform: uppercase;
+
+          &.current {
+            font-weight: 500;
+          }
+
+          &:hover {
+            color: $dkgray;
+          }
+        }
+      }
+    }
+
+    /* Le curseur en dessous du menu */
+    div.cursor {
+      width: 100px;
+      height: 4px;
+      background-color: $orange;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      transition: left ease 300ms, width ease 300ms;
+    }
+
+    /* Lorsque le menu est en 'sticky' en haut de la fenêtre */
+    &.sticky {
+      position: fixed;
+      z-index: 100;
+      background-color: $white;
+      width: 100%;
+      height: 70px;
+      box-shadow: 0 0 5px 5px rgba($gray, .1);
+    }
+  }
+
+  /* Le text d'introduction */
+  .intro {
+    height: 80%;
+    text-align: center;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+
+    p {
+      font-size: 1.4rem;
+      margin: 0;
+      line-height: 2;
+
+      &.big {
+        font-size: 2.5rem;
+      }
+    }
+
+    button {
+      background-color: transparent;
+      border: 2px solid $white;
+      padding: 10px 20px;
+      color: $white;
+      font-family: $font-stack;
+      font-size: 1rem;
+      font-weight: 500;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  /* La flèche pour descendre */
+  .next {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: calc(50% - 20px);
+    bottom: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+
+    i {
+      color: $gray;
+
+      transition: color ease 300ms;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+}

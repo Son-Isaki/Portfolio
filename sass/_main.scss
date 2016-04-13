@@ -1,0 +1,75 @@
+@keyframes open-article {
+  from {
+    left: 50vw;
+    top: 50vh;
+    width: 0;
+    height: 0;
+  }
+
+  to {
+    left: calc(50vw - 100vw);
+    top: calc(50vh - 100vw);
+    width: 200vw;
+    height: 200vw;
+  }
+}
+
+main {
+  background-color: $ltgray;
+
+  /* La partie à propos de la page */
+  .about {
+    background-color: $green;
+    padding: 100px 10%;
+    color: $dkgray;
+    font-weight: 400;
+    font-size: 1.2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    img, p {
+      text-align: center;
+      margin: 20px 10px;
+    }
+
+    img {
+      width: calc(100% - 20px);
+    }
+
+    p {
+      background-color: $dkgreen;
+      border-radius: 3px;
+      padding: 20px;
+      width: calc(100% - 60px);
+      color: $white;
+    }
+  }
+
+  /* La partie compétences de la page */
+  section.skills {
+    background-color: $orange;
+    padding: 60px 10px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+
+      li {
+        width: 50%;
+        display: inline-block;
+        margin: 20px 0;
+
+        h3 {
+          color: $white;
+          text-transform: uppercase;
+          text-align: center;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
