@@ -47,29 +47,4 @@ main {
       color: $white;
     }
   }
-
-  /* La partie compétences de la page */
-  section.skills {
-    background-color: $orange;
-    padding: 60px 10px;
-
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-
-      li {
-        width: 50%;
-        display: inline-block;
-        margin: 20px 0;
-
-        h3 {
-          color: $white;
-          text-transform: uppercase;
-          text-align: center;
-          cursor: pointer;
-        }
-      }
-    }
-  }
 }

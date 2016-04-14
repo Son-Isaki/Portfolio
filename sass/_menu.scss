@@ -1,0 +1,146 @@
+/* Le menu principal */
+nav {
+  background-color: $white;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  box-shadow: 0 0 5px 5px rgba($gray, .15);
+
+  .brand {
+    position: relative;
+
+    .current-section {
+      margin: 0;
+      font-size: 1.1rem;
+      text-align: center;
+      color: $white-gray;
+      line-height: 60px;
+      font-weight: 400;
+      text-transform: uppercase;
+
+      transition: color ease 300ms;
+    }
+
+    .hamburger {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      border: none;
+      background-color: transparent;
+      color: $gray;
+      padding: 0;
+      outline: none;
+      transform: translateY(-50%);
+
+      transition: color ease 300ms;
+    }
+  }
+
+  ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+
+    li {
+      text-align: center;
+
+      a {
+        color: $white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 3rem;
+
+        transition: color ease 500ms;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+
+  &.opened {
+    .current-section {
+      color: $white;
+    }
+
+    .hamburger {
+      color: $orange;
+    }
+
+    ul > li > a {
+      color: $gray;
+    }
+  }
+}
+
+@media screen and (min-width: 680px) {
+  /* Le menu principal */
+  nav {
+    height: 140px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    background-color: $white;
+    box-shadow: 0 0 5px 5px transparent;
+
+    transition: height ease 300ms, box-shadow ease 300ms;
+
+    .brand {
+      display: none;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 400;
+      height: 100%;
+
+      li {
+        a {
+          padding: 20px;
+          color: $dkgray;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 1rem;
+          line-height: 1.5rem;
+
+          &.current {
+            font-weight: 500;
+          }
+
+          &:hover {
+            color: $dkgray;
+          }
+        }
+      }
+    }
+
+    /* Le curseur en dessous du menu */
+    .cursor {
+      width: 100px;
+      height: 4px;
+      background-color: $orange;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      transition: left ease 300ms, bottom ease 300ms, width ease 300ms;
+    }
+
+    /* Lorsque le menu est en 'small' en haut de la fenêtre */
+    &.small {
+      height: 70px;
+      box-shadow: 0 0 5px 5px rgba($gray, .1);
+    }
+  }
+}

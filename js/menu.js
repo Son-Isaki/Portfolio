@@ -5,12 +5,15 @@
 $(document).ready(function () {
     // Les variables
     var nav = $("nav"),
-        cursor = $("nav > div.cursor"),
+        cursor = $("nav > .cursor"),
         menu = $("nav > ul"),
         menuItems = $("nav > ul > li"),
-        sections = $("header, main > section, footer > #contact"),
+        sections = $("#intro, #about, #projects, #skills, #contact"),
+        hamburger = $(".hamburger"),
+        currentSection = $(".current-section"),
         mouseHoverMenu = false,
-        currentItem = null;
+        currentItem = null,
+        smallGreaterThan = 70;
 
     // Position par défaut
     cursor.css("transition-duration", "0ms");
@@ -32,16 +35,25 @@ $(document).ready(function () {
 
     // Fonction qui change la position du curseur
     function setCursorToItem(item) {
-        cursor.css("width", item.width() + "px");
-        cursor.css("left", item.offset().left + "px");
-        setHeight();
+        if (isDesktop()) {
+            cursor.css("width", item.width() + "px");
+            cursor.css("left", item.offset().left + "px");
+            setHeight();
+        }
+    }
+
+    // Fonction qui change la position du curseur
+    function setSectionLabel(item) {
+        if (!isDesktop()) {
+            currentSection.html(item.find("a").html());
+        }
     }
 
     // Fontion qui redéfini la hauteur
     // Exportée de setCursorToItem dans une nouvelle fn car plus simple :
     // J'en ai besoin aussi lorsque l'on scroll, au changement d'affichage du menu :)
     function setHeight() {
-        if (nav.hasClass("sticky")) {
+        if (nav.hasClass("small")) {
             cursor.css("bottom", 0);
         }
         else {
@@ -71,33 +83,60 @@ $(document).ready(function () {
 
     // Changement du type d'affichage du menu
     function switchMenuType() {
-        if ($(this).scrollTop() > 70) {
-            nav.addClass("sticky");
-            $("header > .intro").css("height", "100%");
+        if ($(this).scrollTop() > smallGreaterThan) {
+            nav.addClass("small");
         }
         else {
-            nav.removeClass("sticky");
-            $("header > .intro").css("height", "80%");
+            nav.removeClass("small");
         }
         setHeight();
     }
 
     // Changement automatique de la position du curseur du menu
     function updateCursorPosition() {
-        var scrollPos = $(this).scrollTop();
+        if (isDesktop()) {
+            var scrollPos = $(this).scrollTop();
 
-        sections.each(function (key, value) {
-            var sectionPos = $(this).offset().top,
-                height = $(this).height(),
-                windowHeight = $(window).height(),
-                pos = sectionPos - scrollPos + height / 2;
+            sections.each(function (key, value) {
+                var sectionPos = $(this).offset().top,
+                    height = $(this).height(),
+                    windowHeight = $(window).height(),
+                    pos = sectionPos - scrollPos + height / 2;
 
-            // Si le milieu de l'element se trouve (en ce moment) affiché à l'écran
-            if (pos > 0 && pos < windowHeight) {
-                currentItem = menuItems.eq(key);
-                setCursorToItem(currentItem);
+                // Si le milieu de l'element se trouve (en ce moment) affiché à l'écran
+                if (pos > 0 && pos < windowHeight) {
+                    currentItem = menuItems.eq(key);
+                    setCursorToItem(currentItem);
+                    setSectionLabel(currentItem);
+                }
+            });
+        }
+    }
+
+    // Au clique sur le hamburger
+    hamburger.click(function () {
+        toggleMenu();
+    });
+
+    // Au clique sur un item du menu
+    menuItems.find("a").click(function () {
+        toggleMenu();
+    });
+
+    function toggleMenu() {
+        nav.toggleClass("opened");
+
+        if (!isDesktop()) {
+            if (nav.hasClass("opened")) {
+                menu.slideDown(300);
+            } else {
+                menu.slideUp(300);
             }
-        });
+        }
+    }
+
+    function isDesktop() {
+        return $(window).width() >= 680;
     }
 
     updateCursorPosition();

@@ -1,0 +1,96 @@
+/* La partie compétences de la page */
+.skills {
+  background-color: $orange;
+  padding: 60px 10px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+
+    li {
+      width: 50%;
+      display: inline-block;
+      margin: 20px 0;
+      position: relative;
+
+      &:hover > .tooltip {
+        opacity: 1;
+      }
+
+      h3 {
+        color: $white;
+        text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .tooltip {
+        background-color: $black;
+        border-radius: 5px;
+        color: $white;
+        padding: 10px 15px;
+        font-weight: 400;
+        line-height: 1.2rem;
+        position: absolute;
+        opacity: 0;
+        width: 75%;
+
+        transition: opacity ease 300ms;
+
+        &.top, &.bottom {
+          left: 50%;
+          transform: translateX(-50%);
+
+          &::after {
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+        &.top {
+          bottom: 50px;
+
+          &::after {
+            border-top: 10px solid $black;
+            top: 100%;
+          }
+        }
+
+        &.bottom {
+          top: 50px;
+
+          &::after {
+            border-bottom: 10px solid $black;
+            top: -10px;
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .skills {
+    ul > li {
+      width: 33.333%;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .skills {
+    ul > li {
+      width: 25%;
+    }
+  }
+}

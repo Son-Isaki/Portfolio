@@ -16,6 +16,7 @@
     <script src="js/jQuery/jquery.js"></script>
     <script src="js/modernizr-custom.min.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/filters.js"></script>
     <script src="js/gallery.js"></script>
     <script src="js/smooth-scroll.js"></script>
     <script src="js/reveal-on-scroll.js"></script>
@@ -27,9 +28,15 @@
     <!--Le menu principal-->
     <nav>
         <h2>Menu principal</h2>
-        <ul>
+
+        <div class="brand">
+            <p class="current-section"></p>
+            <button type="button" class="hamburger"><i class="fa fa-bars fa-2x"></i></button>
+        </div>
+
+        <ul class="opened">
             <li><a href="#intro" class="current">Bienvenue</a></li>
-            <li><a href="#about">A propos</a></li>
+            <li><a href="#about">À propos</a></li>
             <li><a href="#projects">Projets</a></li>
             <li><a href="#skills">Compétences</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -40,12 +47,13 @@
 
     <!--Introduction du portfolio-->
     <section class="intro">
-        <p class="big">Bonjour !</p>
+        <div class="centered">
+            <p class="big">Bonjour !</p>
 
-        <p class="big">Je suis <span class="orange">Romain Tiger</span></p>
+            <p class="big">Je suis <span class="orange">Romain Tiger</span></p>
 
-        <p><span class="orange">Développeur</span> Front-end | Back-end</p>
-
+            <p><span class="orange">Développeur</span> Front-end | Back-end</p>
+        </div>
     </section>
 
     <a href="#about" class="next"><i class="fa fa-chevron-down fa-2x"></i></a>
@@ -103,14 +111,38 @@
     <!--Liste de mes compétences-->
     <section id="skills" class="skills">
         <ul>
-            <li><h3>PHP</h3></li><!--
-            --><li><h3>C#</h3></li><!--
-            --><li><h3>Illustrator</h3></li><!--
-            --><li><h3>Symfony 2</h3></li><!--
-            --><li><h3>HTML5</h3></li><!--
-            --><li><h3>CSS3</h3></li><!--
-            --><li><h3>MySql</h3></li><!--
-            --><li><h3>jQuery</h3></li>
+            <li>
+                <h3>PHP</h3>
+                <p class="tooltip top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+            </li><!--
+            --><li>
+                <h3>C#</h3>
+                <p class="tooltip top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+            </li><!--
+            --><li>
+                <h3>Illustrator</h3>
+                <p class="tooltip top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+            </li><!--
+            --><li>
+                <h3>Symfony 2</h3>
+                <p class="tooltip top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+            </li><!--
+            --><li>
+                <h3>HTML5</h3>
+                <p class="tooltip bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+            </li><!--
+            --><li>
+                <h3>CSS3</h3>
+                <p class="tooltip bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+            </li><!--
+            --><li>
+                <h3>MySql</h3>
+                <p class="tooltip bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+            </li><!--
+            --><li>
+                <h3>jQuery</h3>
+                <p class="tooltip bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+            </li>
         </ul>
     </section>
 </main>
@@ -164,9 +196,9 @@
 
     <!--Les memtions-->
     <section class="mentions">
-        Developpé par <span class="white">Romain Tiger</span> grâce à <span
-            class="white">Symfony 2</span>
-        et <span class="white">SASS</span>
+        <div>Copyright © 2016 -</div>
+        <div>Developpé par <span class="white">Romain Tiger</span></div>
+        <div>grâce à <span class="white">Symfony 2</span> et <span class="white">SASS</span></div>
     </section>
 </footer>
 </body>

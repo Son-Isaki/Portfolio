@@ -19,12 +19,12 @@ footer {
       line-height: 2.2rem;
     }
 
-    div.column {
+    .column {
       display: inline-block;
       width: 100%;
       overflow: auto;
 
-      div.group {
+      .group {
         width: 100%;
         overflow: auto;
         padding-bottom: 30px;
@@ -75,6 +75,7 @@ footer {
           color: $white;
           cursor: pointer;
           border-radius: 3px;
+          outline: none;
 
           transition: background-color ease 300ms;
 
@@ -138,11 +139,27 @@ footer {
 
   /* Les mentions */
   .mentions {
-    background-color: $dkgreen;
+    background-color: $green;
     padding: 20px 10px;
     text-align: center;
     color: $black;
     font-weight: 500;
     line-height: 1.5rem;
+
+    div {
+      display: inline-block;
+    }
+  }
+}
+
+@media screen and (min-width: 680px) {
+  footer > .social {
+    padding: 30px 10% 60px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  footer > .social {
+    padding: 30px 20% 60px;
   }
 }
