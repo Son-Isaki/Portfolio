@@ -6,20 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Fichiers CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/fonts/Roboto/roboto.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/SelectInspiration/css/cs-select.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom-select.css" />
 
     <!--Fichiers Javascript-->
-    <script src="js/jQuery/jquery.js"></script>
-    <script src="js/modernizr-custom.min.js"></script>
+    <script src="assets/jQuery/jquery.js"></script>
+    <script src="assets/modernizr-custom.min.js"></script>
+    <script src="assets/smooth-scroll.js"></script>
+    <script src="js/reveal-on-scroll.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/filters.js"></script>
-    <script src="js/gallery.js"></script>
-    <script src="js/smooth-scroll.js"></script>
-    <script src="js/reveal-on-scroll.js"></script>
+    <script src="js/lettering.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/tooltip.js"></script>
+    <script src="assets/SelectInspiration/js/classie.js"></script>
+    <script src="assets/SelectInspiration/js/selectFx.js"></script>
+    <script>
+        $(document).ready(function() {
+            [].slice.call(document.querySelectorAll("select.cs-select") ).forEach(function(el) {
+                new SelectFx(el);
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -31,10 +45,14 @@
 
         <div class="brand">
             <p class="current-section"></p>
-            <button type="button" class="hamburger"><i class="fa fa-bars fa-2x"></i></button>
+            <button type="button" class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
         </div>
 
-        <ul class="opened">
+        <ul>
             <li><a href="#intro" class="current">Bienvenue</a></li>
             <li><a href="#about">À propos</a></li>
             <li><a href="#projects">Projets</a></li>
@@ -48,11 +66,11 @@
     <!--Introduction du portfolio-->
     <section class="intro">
         <div class="centered">
-            <p class="big">Bonjour !</p>
+            <!--<div class="big inline">Bonjour !</div>
+            <div class="big inline">Je suis <span class="orange">Romain Tiger</span></div>-->
+            <div id="lettering"></div>
 
-            <p class="big">Je suis <span class="orange">Romain Tiger</span></p>
-
-            <p><span class="orange">Développeur</span> Front-end | Back-end</p>
+            <div class="block"><span class="orange">Développeur</span> Front-end | Back-end</div>
         </div>
     </section>
 
@@ -62,86 +80,194 @@
 <main>
     <!--Présentation de moi-même-->
     <section id="about" class="about">
-        <img src="css/images/mac.svg" alt="MacBook Pro" class="revealOnScroll">
+        <div class="group">
+            <div class="cell"><img src="css/images/mac.svg" alt="MacBook Pro" class="revealOnScroll"></div>
+            <div class="cell"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi fugiat rem vero.
+                Earum, impedit, vitae.</p></div>
+        </div>
 
-        <p>blah blah, blah blah <span class="white">blah blah</span> !</p>
-
-        <img src="css/images/mac.svg" alt="MacBook Pro" class="revealOnScroll">
-
-        <p>blah blah, blah blah <span class="white">blah blah</span> !</p>
+        <div class="group">
+            <div class="cell"><img src="css/images/mac.svg" alt="MacBook Pro" class="revealOnScroll"></div>
+            <div class="cell"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur,
+                explicabo.</span> !</p></div>
+        </div>
     </section>
 
     <!--Liste des projets-->
     <section id="projects" class="projects">
         <!--Les filtres-->
         <div class="filters">
-            <button data-filter="all" class="selected">All</button>
-            <button data-filter="video-games">Video games</button>
+            <button data-filter="all" class="selected">Tout</button>
+            <button data-filter="video-games">Jeux vidéo</button>
             <button data-filter="web">Web</button>
             <button data-filter="symfony-2">Symfony 2</button>
-            <button data-filter="vector">Vector</button>
-            <button data-filter="video-games">Video games</button>
-            <button data-filter="web">Web</button>
-            <button data-filter="symfony-2">Symfony 2</button>
-            <button data-filter="vector">Vector</button>
+            <button data-filter="vectoriel">Vectoriel</button>
         </div>
 
-        <select class="filters-input">
-            <option data-filter="all">All</option>
-            <option data-filter="video-games">Video games</option>
-            <option data-filter="web">Web</option>
-            <option data-filter="symfony-2">Symfony 2</option>
-            <option data-filter="vector">Vector</option>
-        </select>
+        <section>
+            <select class="cs-select custom-select">
+                <option value="all" disabled selected>Tout</option>
+                <option value="video-games">Jeux vidéo</option>
+                <option value="web">Web</option>
+                <option value="symfony-2">Symfony 2</option>
+                <option value="vectoriel">Vectoriel</option>
+            </select>
+        </section>
 
         <section class="gallery">
             <ul>
-                <li class="item"><a href="#" style="background-image: url(images/article-1.jpg);"></a></li><!--
-                --><li class="item"><a href="#" style="background-image: url(images/article-3.png);"></a></li><!--
-                --><li class="item"><a href="#" style="background-image: url(images/article-2.jpg);"></a></li><!--
-                --><li class="item"><a href="#" style="background-image: url(images/article-4.jpg);"></a></li><!--
-                --><li class="item"><a href="#" style="background-image: url(images/article-3.png);"></a></li><!--
-                --><li class="item"><a href="#" style="background-image: url(images/article-1.jpg);"></a></li><!--
-                --><li class="item"><a href="#" style="background-image: url(images/article-2.jpg);"></a></li><!--
-                --><li class="item"><a href="#" style="background-image: url(images/article-4.jpg);"></a></li>
+                <li class="item"><a class="thumbnail" style="background-image: url(images/article-1.jpg);"></a>
+                </li><!--
+                --><li class="item"><a class="thumbnail" style="background-image: url(images/article-3.png);"></a>
+                </li><!--
+                --><li class="item"><a class="thumbnail" style="background-image: url(images/article-2.jpg);"></a>
+                </li><!--
+               --><li class="item"><a class="thumbnail" style="background-image: url(images/article-3.png);"></a>
+                </li><!--
+                --><li class="item"><a class="thumbnail" style="background-image: url(images/article-1.jpg);"></a>
+                </li><!--
+                --><li class="item"><a class="thumbnail" style="background-image: url(images/article-4.jpg);"></a>
+                </li>
             </ul>
         </section>
+
+        <!--Le contenu affiché lorsque l'on clique sur un article de la liste-->
+        <div class="overlay">
+            <div id="project-content" class="project-content">
+                <i class="fa fa-close fa-2x close"></i>
+
+                <div class="table">
+                    <div class="picture">
+                        <img src="images/article-1.jpg" alt="image" class="thumbnail">
+                    </div>
+
+                    <div class="content">
+
+                        <h3>Titre du projet</h3>
+
+                        <p class="company">Nom de l'entreprise</p>
+
+                        <div class="description">
+                            <div class="text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam obcaecati praesentium quasi
+                                sint.
+                                Aspernatur at blanditiis consequatur delectus distinctio esse ex explicabo facilis id
+                                laboriosam,
+                                nesciunt quas, quos rem, saepe sapiente sit velit. Autem, deleniti dignissimos ea est itaque
+                                totam?
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam obcaecati praesentium quasi
+                                sint.
+                                Aspernatur at blanditiis consequatur delectus distinctio esse ex explicabo facilis id
+                                laboriosam,
+                                nesciunt quas, quos rem, saepe sapiente sit velit. Autem, deleniti dignissimos ea est itaque
+                                totam?
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam obcaecati praesentium quasi
+                                sint.
+                                Aspernatur at blanditiis consequatur delectus distinctio esse ex explicabo facilis id
+                                laboriosam,
+                                nesciunt quas, quos rem, saepe sapiente sit velit. Autem, deleniti dignissimos ea est itaque
+                                totam?
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam obcaecati praesentium quasi
+                                sint.
+                                Aspernatur at blanditiis consequatur delectus distinctio esse ex explicabo facilis id
+                                laboriosam,
+                                nesciunt quas, quos rem, saepe sapiente sit velit. Autem, deleniti dignissimos ea est itaque
+                                totam?
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam obcaecati praesentium quasi
+                                sint.
+                                Aspernatur at blanditiis consequatur delectus distinctio esse ex explicabo facilis id
+                                laboriosam,
+                                nesciunt quas, quos rem, saepe sapiente sit velit. Autem, deleniti dignissimos ea est itaque
+                                totam?
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam obcaecati praesentium quasi
+                                sint.
+                                Aspernatur at blanditiis consequatur delectus distinctio esse ex explicabo facilis id
+                                laboriosam,
+                                nesciunt quas, quos rem, saepe sapiente sit velit. Autem, deleniti dignissimos ea est itaque
+                                totam?
+                            </div>
+                        </div>
+
+                        <div><a href="#" class="website" target="_blank">Accéder au site</a></div>
+
+                        <div class="like"><i class="fa fa-heart"></i><span>Vous aimez ce projet</span></div>
+
+                        <ul class="tags">
+                            <li><a href="tag"><i class="fa fa-hashtag"></i>tag</a></li>
+                            <li><a href="tag"><i class="fa fa-hashtag"></i>tag</a></li>
+                            <li><a href="tag"><i class="fa fa-hashtag"></i>tag</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="gallery">
+                    <div class="container">
+                        <ul>
+                            <li class="thumbnail"><img src="images/article-1.jpg" alt="image"></li>
+                            <li class="thumbnail"><img src="images/article-2.jpg" alt="image"></li>
+                            <li class="thumbnail"><img src="images/article-3.png" alt="image"></li>
+                            <li class="thumbnail"><img src="images/article-4.jpg" alt="image"></li>
+                            <li class="thumbnail"><img src="images/article-2.jpg" alt="image"></li>
+                            <li class="thumbnail"><img src="images/article-1.jpg" alt="image"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </section>
 
     <!--Liste de mes compétences-->
     <section id="skills" class="skills">
         <ul>
-            <li>
+            <li class="tooltip">
                 <h3>PHP</h3>
-                <p class="tooltip top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+
+                <p class="top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus
+                    neque numquam veniam!</p>
             </li><!--
-            --><li>
+            --><li class="tooltip">
                 <h3>C#</h3>
-                <p class="tooltip top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+
+                <p class="top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus
+                    neque numquam veniam!</p>
             </li><!--
-            --><li>
+            --><li class="tooltip">
                 <h3>Illustrator</h3>
-                <p class="tooltip top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+
+                <p class="top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus
+                    neque numquam veniam!</p>
             </li><!--
-            --><li>
+            --><li class="tooltip">
                 <h3>Symfony 2</h3>
-                <p class="tooltip top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+
+                <p class="top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus
+                    neque numquam veniam!</p>
             </li><!--
-            --><li>
+            --><li class="tooltip">
                 <h3>HTML5</h3>
-                <p class="tooltip bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+
+                <p class="bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni
+                    minus neque numquam veniam!</p>
             </li><!--
-            --><li>
+            --><li class="tooltip">
                 <h3>CSS3</h3>
-                <p class="tooltip bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+
+                <p class="bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni
+                    minus neque numquam veniam!</p>
             </li><!--
-            --><li>
+            --><li class="tooltip">
                 <h3>MySql</h3>
-                <p class="tooltip bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+
+                <p class="bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni
+                    minus neque numquam veniam!</p>
             </li><!--
-            --><li>
+            --><li class="tooltip">
                 <h3>jQuery</h3>
-                <p class="tooltip bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni minus neque numquam veniam!</p>
+
+                <p class="bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iste, magni
+                    minus neque numquam veniam!</p>
             </li>
         </ul>
     </section>
@@ -150,55 +276,55 @@
 <footer>
     <!--Réseaux sociaux-->
     <section class="social">
-        <h2>Retrouvez-moi sur les réseaux !</h2>
+        <h2>Retrouvez-moi !</h2>
         <ul>
-            <li><a href="https://github.com/Son-Isaki" title="Github"><i class="fa fa-github fa-3x"></i></a></li>
-            <li><a href="https://fr.linkedin.com/in/romaintiger" title="LinkedIn"><i
+            <li><a href="https://github.com/Son-Isaki" title="Github" target="_blank"><i class="fa fa-github fa-3x"></i></a></li>
+            <li><a href="https://fr.linkedin.com/in/romaintiger" title="LinkedIn" target="_blank"><i
                     class="fa fa-linkedin fa-3x"></i></a></li>
-            <li><a href="http://son-isaki.deviantart.com" title="DeviantArt"><i class="fa fa-deviantart fa-3x"></i></a>
+            <li><a href="http://son-isaki.deviantart.com" title="DeviantArt" target="_blank"><i class="fa fa-deviantart fa-3x"></i></a>
             </li>
         </ul>
     </section>
 
     <!--Formulaire de contact-->
-    <form method="post" action="#" id="contact">
+    <form method="post" action="#" id="contact" class="contact">
         <h2>Contactez-moi !</h2>
 
-        <div class="column">
-            <div class="group">
-                <label for="name">Votre nom <span class="orange">*</span></label>
-                <input type="text" name="name" id="name">
+        <div class="container">
+            <div class="column">
+                <div class="group">
+                    <label for="name">Votre nom <span class="orange">*</span></label>
+                    <input type="text" name="name" id="name">
 
-                <p class="form-error">Veuillez entrer votre nom</p>
+                    <p class="form-error">Veuillez entrer votre nom</p>
+                </div>
+
+                <div class="group">
+                    <label for="email">Votre email <span class="orange">*</span></label>
+                    <input type="email" name="email" id="email">
+
+                    <p class="form-error">Ce n'est pas une adresse email</p>
+                </div>
             </div>
 
-            <div class="group">
-                <label for="email">Votre email <span class="orange">*</span></label>
-                <input type="email" name="email" id="email">
+            <div class="column">
+                <div class="group">
+                    <label for="message">Votre message <span class="orange">*</span></label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
 
-                <p class="form-error">Ce n'est pas une adresse email</p>
-            </div>
-        </div>
+                    <p class="form-error">Votre message est vide</p>
+                </div>
 
-        <div class="column">
-            <div class="group">
-                <label for="message">Votre message <span class="orange">*</span></label>
-                <textarea name="message" id="message" cols="30" rows="10"></textarea>
-
-                <p class="form-error">Votre message est vide</p>
-            </div>
-
-            <div class="group">
-                <button type="button" name="submit">Envoyer</button>
+                <div class="group">
+                    <button type="button" name="submit">Envoyer</button>
+                </div>
             </div>
         </div>
     </form>
 
     <!--Les memtions-->
     <section class="mentions">
-        <div>Copyright © 2016 -</div>
-        <div>Developpé par <span class="white">Romain Tiger</span></div>
-        <div>grâce à <span class="white">Symfony 2</span> et <span class="white">SASS</span></div>
+        Copyright <i class="fa fa-copyright"></i> 2016 - <span class="white">Romain Tiger</span>
     </section>
 </footer>
 </body>

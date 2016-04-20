@@ -1,7 +1,7 @@
 /* La partie projets de la page */
 .projects {
   background-color: $white;
-  padding: 80px 10px;
+  padding: 60px 10px;
 
   .filters, .pagination {
     text-align: center;
@@ -19,11 +19,29 @@
       padding: 8px;
       outline: none;
       margin: 5px;
+      position: relative;
 
       transition: color ease 300ms;
 
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: $orange;
+        width: 0;
+        height: 2px;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+
+        transition: width ease 300ms;
+      }
+
       &.selected, &:hover {
         color: $orange;
+
+        &::after {
+          width: 100%;
+        }
       }
 
       &.selected {
@@ -32,60 +50,63 @@
     }
   }
 
-  .filters-input {
+  .gallery {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
+      .item {
+        width: calc(100% - 20px);
+        background-color: $gray;
+        display: inline-block;
+        margin: 10px;
+        overflow: hidden;
+        border-radius: 5px;
+
+        a {
+          display: block;
+          width: calc(100% - 20px);
+          padding-bottom: 60%;
+          background-size: cover;
+          background-position: center center;
+          position: relative;
+          border-radius: 5px;
+
+          &:hover::after {
+            opacity: 1;
+          }
+
+          &::after {
+            content: "+";
+            background-color: rgba($black, .5);
+            width: 500px;
+            height: 500px;
+            display: block;
+            position: absolute;
+            text-align: center;
+            line-height: 500px;
+            vertical-align: middle;
+            opacity: 0;
+            color: $ltwhite;
+            font-weight: 500;
+            font-size: 2.5rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            transition: opacity ease 300ms;
+          }
+        }
+      }
+    }
   }
 }
 
-.gallery {
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    .item {
-      width: calc(100% - 40px);
-      background-color: $gray;
-      display: inline-block;
-      margin: 10px;
-      overflow: hidden;
-      border: 10px solid $ltwhite;
-      border-radius: 3px;
-
-      a {
-        display: block;
-        width: 100%;
-        padding-bottom: 60%;
-        background-size: cover;
-        background-position: center center;
-        position: relative;
-        border-radius: 3px;
-
-        &:hover::after {
-          opacity: 1;
-        }
-
-        &::after {
-          content: "+";
-          background-color: rgba($black, .5);
-          width: 500px;
-          height: 500px;
-          display: block;
-          position: absolute;
-          text-align: center;
-          line-height: 500px;
-          vertical-align: middle;
-          opacity: 0;
-          color: $ltwhite;
-          font-weight: 500;
-          font-size: 2.5rem;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-
-          transition: opacity ease 300ms;
-        }
-      }
+@media screen and (min-width: 680px) {
+  .projects {
+    .custom-select {
+      display: none;
     }
   }
 }
@@ -95,19 +116,16 @@
     .filters {
       display: inline-block;
     }
-    .filters-input {
-      display: none;
-    }
-  }
 
-  .gallery {
-    ul {
-      .item {
-        width: calc(50% - 40px);
+    .gallery {
+      ul {
+        .item {
+          width: calc(50% - 20px);
 
-        a {
-          padding-bottom: 30%;
-          min-height: 100px;
+          a {
+            padding-bottom: 30%;
+            min-height: 100px;
+          }
         }
       }
     }
@@ -118,16 +136,16 @@
   section.projects {
     padding-left: 40px;
     padding-right: 40px;
-  }
 
-  .gallery {
-    ul {
-      .item {
-        width: calc(33.33% - 40px);
+    .gallery {
+      ul {
+        .item {
+          width: calc(33.33% - 40px);
 
-        a {
-          padding-bottom: 25%;
-          min-height: 100px;
+          a {
+            padding-bottom: 25%;
+            min-height: 100px;
+          }
         }
       }
     }

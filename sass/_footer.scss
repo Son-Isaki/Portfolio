@@ -3,19 +3,19 @@ footer {
   color: $white;
 
   /* Le formulaire de contact */
-  form {
-    display: flex;
+  .contact {
+    /*display: flex;
     justify-content: space-around;
-    padding: 60px;
+    flex-wrap: wrap;*/
+    padding: 40px 60px 20px;
     max-width: 800px;
     margin: auto;
-    flex-wrap: wrap;
 
     h2 {
-      flex: 1 100%;
+      //flex: 1 100%;
       font-weight: 400;
       text-align: center;
-      margin-bottom: 50px;
+      //margin-bottom: 50px;
       line-height: 2.2rem;
     }
 
@@ -29,7 +29,7 @@ footer {
         overflow: auto;
         padding-bottom: 30px;
         position: relative;
-        margin: 20px 0;
+        margin: 30px 0;
 
         label {
           display: block;
@@ -153,13 +153,29 @@ footer {
 }
 
 @media screen and (min-width: 680px) {
-  footer > .social {
-    padding: 30px 10% 60px;
+  footer {
+    .contact > .container {
+      display: table;
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 40px;
+
+      .column {
+        display: table-cell;
+        width: 50%;
+      }
+    }
+
+    .social {
+      padding: 30px 10% 60px;
+    }
   }
 }
 
 @media screen and (min-width: 900px) {
-  footer > .social {
-    padding: 30px 20% 60px;
+  footer {
+    .social {
+      padding: 30px 20% 60px;
+    }
   }
 }

@@ -39,3 +39,12 @@ h2 {
 span {
   display: inline-block;
 }
+
+main {
+  background-color: $ltgray;
+}
+
+.thumbnail {
+  border-radius: 5px;
+  border: 10px solid $ltwhite;
+}

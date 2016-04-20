@@ -17,6 +17,7 @@ nav {
       font-size: 1.1rem;
       text-align: center;
       color: $white-gray;
+      height: 60px;
       line-height: 60px;
       font-weight: 400;
       text-transform: uppercase;
@@ -26,16 +27,52 @@ nav {
 
     .hamburger {
       position: absolute;
-      top: 50%;
-      right: 20px;
-      border: none;
+      width: 30px;
+      height: 31px;
       background-color: transparent;
-      color: $gray;
+      border: none;
       padding: 0;
       outline: none;
+      right: 20px;
+      top: 50%;
       transform: translateY(-50%);
 
-      transition: color ease 300ms;
+      div {
+        position: absolute;
+        background-color: $gray;
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+        left: 0;
+
+        transition: background-color .2s ease, top .2s ease, bottom .2s ease;
+      }
+
+      div:nth-child(1) {
+        top: 4px;
+      }
+
+      div:nth-child(2) {
+        top: calc(50% - 3px);
+      }
+
+      div:nth-child(3) {
+        bottom: 4px;
+      }
+
+      &:hover {
+        div {
+          background-color: $orange;
+        }
+
+        div:nth-child(1) {
+          top: 2px;
+        }
+
+        div:nth-child(3) {
+          bottom: 2px;
+        }
+      }
     }
   }
 
@@ -70,7 +107,17 @@ nav {
     }
 
     .hamburger {
-      color: $orange;
+      div {
+        background-color: $orange;
+      }
+
+      div:nth-child(1) {
+        top: 2px;
+      }
+
+      div:nth-child(3) {
+        bottom: 2px;
+      }
     }
 
     ul > li > a {
@@ -141,6 +188,7 @@ nav {
     &.small {
       height: 70px;
       box-shadow: 0 0 5px 5px rgba($gray, .1);
+      bottom: 20px;
     }
   }
 }

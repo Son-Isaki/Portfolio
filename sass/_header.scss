@@ -20,8 +20,9 @@ header {
       display: table-cell;
       width: 100%;
       vertical-align: middle;
+      text-align: center;
 
-      p {
+      .inline, .block {
         font-size: 1.2rem;
         margin: 0;
         line-height: 2;
@@ -30,6 +31,14 @@ header {
         &.big {
           font-size: 2rem;
         }
+      }
+
+      .inline {
+        display: inline-block;
+      }
+
+      .block {
+        display: block;
       }
     }
 

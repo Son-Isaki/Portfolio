@@ -1,0 +1,66 @@
+/* La partie à propos de la page */
+.about {
+  background-color: $green;
+  padding: 100px 20px;
+  color: $dkgray;
+  font-weight: 400;
+  font-size: 1.2rem;
+
+  .group {
+    display: block;
+    width: 100%;
+
+    &:not(:first-child) > * {
+      padding: 40px 0;
+    }
+
+    &:not(:last-child) > * {
+      padding: 40px 0;
+    }
+
+    .cell {
+      display: inline-block;
+      width: 100%;
+      vertical-align: middle;
+
+      img, p {
+        text-align: center;
+        width: calc(100% - 40px);
+        margin: 0 20px;
+      }
+
+      p {
+        background-color: $dkgreen;
+        border-radius: 3px;
+        padding: 15px 20px;
+        color: $white;
+        width: calc(100% - 80px);
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .about {
+    padding: 100px 20px;
+    display: table;
+
+    .group {
+      display: table-row;
+      width: 100%;
+
+      .cell {
+        display: table-cell;
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .about {
+    padding: 100px 15%;
+  }
+}

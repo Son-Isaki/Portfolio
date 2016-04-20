@@ -1,0 +1,212 @@
+/* La partie projets de la page */
+.overlay {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  width: 0;
+  height: 0;
+  background-color: $white;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+  overflow: hidden;
+
+  &.show {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.project-content {
+  width: 100vw;
+  height: 100vh;
+  color: $black;
+  opacity: 0;
+  z-index: -9999;
+  font-size: 1rem;
+  position: relative;
+
+  &.show {
+    opacity: 1;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: $white-gray;
+    margin: 15px;
+
+    transition: color 300ms ease;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  .table {
+    .picture {
+      display: none;
+      text-align: center;
+
+      img {
+        max-width: calc(100% - 20px);
+        max-height: 380px;
+      }
+    }
+
+    .content {
+      padding: 10px 0;
+      height: calc(100% - 280px);
+      overflow-x: hidden;
+      overflow-y: scroll;
+
+      & > * {
+        padding: 10px 20px;
+        width: calc(100% - 40px);
+        display: block;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        width: calc(100% - 100px);
+        padding-right: 100px;
+      }
+
+      .like {
+        color: $black;
+        cursor: pointer;
+        display: inline;
+
+        i {
+          margin-right: 10px;
+
+          transition: color 300ms ease;
+        }
+
+        &.youlike {
+          i {
+            color: $orange;
+          }
+        }
+      }
+
+      .company {
+        font-weight: 400;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        background-color: $ltwhite;
+        padding: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: $black;
+
+        transition: color 300ms ease;
+
+        &:hover {
+          color: $orange;
+        }
+
+        &.website {
+          color: $orange;
+          //font-weight: 400;
+
+          &:hover {
+            color: $dkorange;
+          }
+        }
+      }
+
+      .tags {
+        li {
+          display: inline-block;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .gallery {
+    width: 100%;
+    background-color: $green;
+    height: 180px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    .container {
+      overflow: scroll;
+
+      ul {
+        display: table;
+        white-space: nowrap;
+        list-style: none;
+        padding: 0;
+        border-collapse: separate;
+        border-spacing: 20px;
+        margin: auto;
+
+        li {
+          display: table-cell;
+
+          img {
+            display: block;
+            height: 120px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .project-content > .table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 20px;
+    height: calc(100% - 180px);
+    padding: 0 20px;
+
+    .picture, .content {
+      display: table-cell;
+      vertical-align: middle;
+      width: 50%;
+    }
+
+    .content > .description {
+      position: relative;
+      border-radius: 5px;
+      overflow: hidden;
+      padding: 0;
+
+      &::after, &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 30px;
+        left: 0;
+      }
+
+      &::after {
+        top: 0;
+        background-image: linear-gradient($ltwhite, transparent);
+      }
+
+      &::before {
+        bottom: 0;
+        background-image: linear-gradient(transparent, $ltwhite);
+      }
+
+      .text {
+        max-height: 250px;
+        overflow-y: scroll;
+        padding: 20px;
+      }
+    }
+  }
+}

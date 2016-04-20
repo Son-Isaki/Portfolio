@@ -8,24 +8,21 @@
     padding: 0;
     text-align: center;
 
-    li {
+    .tooltip {
       width: 50%;
       display: inline-block;
       margin: 20px 0;
       position: relative;
-
-      &:hover > .tooltip {
-        opacity: 1;
-      }
 
       h3 {
         color: $white;
         text-transform: uppercase;
         text-align: center;
         cursor: pointer;
+        display: inline-block;
       }
 
-      .tooltip {
+      p {
         background-color: $black;
         border-radius: 5px;
         color: $white;
@@ -33,10 +30,10 @@
         font-weight: 400;
         line-height: 1.2rem;
         position: absolute;
-        opacity: 0;
+        display: none;
         width: 75%;
-
-        transition: opacity ease 300ms;
+        z-index: 30;
+        opacity: 0;
 
         &.top, &.bottom {
           left: 50%;
@@ -81,7 +78,7 @@
 
 @media screen and (min-width: 680px) {
   .skills {
-    ul > li {
+    ul > .tooltip {
       width: 33.333%;
     }
   }
@@ -89,7 +86,7 @@
 
 @media screen and (min-width: 800px) {
   .skills {
-    ul > li {
+    ul > .tooltip {
       width: 25%;
     }
   }
