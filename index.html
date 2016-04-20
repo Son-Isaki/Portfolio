@@ -29,7 +29,7 @@
     <script src="assets/SelectInspiration/js/selectFx.js"></script>
     <script>
         $(document).ready(function() {
-            [].slice.call(document.querySelectorAll("select.cs-select") ).forEach(function(el) {
+            [].slice.call(document.querySelectorAll("select.cs-select")).forEach(function(el) {
                 new SelectFx(el);
             });
         });
@@ -105,8 +105,8 @@
         </div>
 
         <section>
-            <select class="cs-select custom-select">
-                <option value="all" disabled selected>Tout</option>
+            <select class="cs-select custom-select select-filters">
+                <option value="all" selected>Tout</option>
                 <option value="video-games">Jeux vidéo</option>
                 <option value="web">Web</option>
                 <option value="symfony-2">Symfony 2</option>
@@ -114,19 +114,20 @@
             </select>
         </section>
 
+        <!--La galerie-->
         <section class="gallery">
             <ul>
-                <li class="item"><a class="thumbnail" style="background-image: url(images/article-1.jpg);"></a>
+                <li class="item video-games"><a class="thumbnail" style="background-image: url(images/article-1.jpg);"></a>
                 </li><!--
-                --><li class="item"><a class="thumbnail" style="background-image: url(images/article-3.png);"></a>
+                --><li class="item symfony-2 web"><a class="thumbnail" style="background-image: url(images/article-3.png);"></a>
                 </li><!--
-                --><li class="item"><a class="thumbnail" style="background-image: url(images/article-2.jpg);"></a>
+                --><li class="item web"><a class="thumbnail" style="background-image: url(images/article-2.jpg);"></a>
                 </li><!--
-               --><li class="item"><a class="thumbnail" style="background-image: url(images/article-3.png);"></a>
+               --><li class="item symfony-2"><a class="thumbnail" style="background-image: url(images/article-3.png);"></a>
                 </li><!--
-                --><li class="item"><a class="thumbnail" style="background-image: url(images/article-1.jpg);"></a>
+                --><li class="item web vectoriel"><a class="thumbnail" style="background-image: url(images/article-1.jpg);"></a>
                 </li><!--
-                --><li class="item"><a class="thumbnail" style="background-image: url(images/article-4.jpg);"></a>
+                --><li class="item video-games vectoriel"><a class="thumbnail" style="background-image: url(images/article-4.jpg);"></a>
                 </li>
             </ul>
         </section>

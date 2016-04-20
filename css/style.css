@@ -408,7 +408,7 @@ nav.opened ul > li > a {
 /* line 10, ../sass/_projects.scss */
 .projects .filters {
   display: none;
-  margin: 40px 10px;
+  margin: 0 10px 40px;
   width: calc(100% - 20px);
 }
 /* line 15, ../sass/_projects.scss */
@@ -498,15 +498,15 @@ nav.opened ul > li > a {
 
 @media screen and (min-width: 680px) {
   /* line 108, ../sass/_projects.scss */
+  .projects .filters {
+    display: inline-block;
+  }
+  /* line 112, ../sass/_projects.scss */
   .projects .custom-select {
     display: none;
   }
 }
 @media screen and (min-width: 540px) {
-  /* line 116, ../sass/_projects.scss */
-  .projects .filters {
-    display: inline-block;
-  }
   /* line 122, ../sass/_projects.scss */
   .projects .gallery ul .item {
     width: calc(50% - 20px);
@@ -633,32 +633,60 @@ nav.opened ul > li > a {
 /* line 100, ../sass/_projects_content.scss */
 .project-content .table .content .description {
   background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  margin: 20px;
+}
+/* line 108, ../sass/_projects_content.scss */
+.project-content .table .content .description::after, .project-content .table .content .description::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 30px;
+  left: 0;
+}
+/* line 116, ../sass/_projects_content.scss */
+.project-content .table .content .description::after {
+  top: 0;
+  background-image: linear-gradient(white, transparent);
+}
+/* line 121, ../sass/_projects_content.scss */
+.project-content .table .content .description::before {
+  bottom: 0;
+  background-image: linear-gradient(transparent, white);
+}
+/* line 126, ../sass/_projects_content.scss */
+.project-content .table .content .description .text {
+  max-height: 250px;
+  overflow-y: scroll;
   padding: 20px;
 }
-/* line 105, ../sass/_projects_content.scss */
+/* line 133, ../sass/_projects_content.scss */
 .project-content .table .content a {
   text-decoration: none;
   color: #263238;
   transition: color 300ms ease;
 }
-/* line 111, ../sass/_projects_content.scss */
+/* line 139, ../sass/_projects_content.scss */
 .project-content .table .content a:hover {
   color: #FF5722;
 }
-/* line 115, ../sass/_projects_content.scss */
+/* line 143, ../sass/_projects_content.scss */
 .project-content .table .content a.website {
   color: #FF5722;
 }
-/* line 119, ../sass/_projects_content.scss */
+/* line 147, ../sass/_projects_content.scss */
 .project-content .table .content a.website:hover {
   color: #E64A19;
 }
-/* line 126, ../sass/_projects_content.scss */
+/* line 154, ../sass/_projects_content.scss */
 .project-content .table .content .tags li {
   display: inline-block;
   margin: 0;
 }
-/* line 134, ../sass/_projects_content.scss */
+/* line 162, ../sass/_projects_content.scss */
 .project-content .gallery {
   width: 100%;
   background-color: #26A69A;
@@ -667,11 +695,11 @@ nav.opened ul > li > a {
   left: 0;
   bottom: 0;
 }
-/* line 142, ../sass/_projects_content.scss */
+/* line 170, ../sass/_projects_content.scss */
 .project-content .gallery .container {
   overflow: scroll;
 }
-/* line 145, ../sass/_projects_content.scss */
+/* line 173, ../sass/_projects_content.scss */
 .project-content .gallery .container ul {
   display: table;
   white-space: nowrap;
@@ -681,18 +709,18 @@ nav.opened ul > li > a {
   border-spacing: 20px;
   margin: auto;
 }
-/* line 154, ../sass/_projects_content.scss */
+/* line 182, ../sass/_projects_content.scss */
 .project-content .gallery .container ul li {
   display: table-cell;
 }
-/* line 157, ../sass/_projects_content.scss */
+/* line 185, ../sass/_projects_content.scss */
 .project-content .gallery .container ul li img {
   display: block;
   height: 120px;
 }
 
 @media screen and (min-width: 680px) {
-  /* line 168, ../sass/_projects_content.scss */
+  /* line 196, ../sass/_projects_content.scss */
   .project-content > .table {
     display: table;
     border-collapse: separate;
@@ -700,42 +728,11 @@ nav.opened ul > li > a {
     height: calc(100% - 180px);
     padding: 0 20px;
   }
-  /* line 175, ../sass/_projects_content.scss */
+  /* line 203, ../sass/_projects_content.scss */
   .project-content > .table .picture, .project-content > .table .content {
     display: table-cell;
     vertical-align: middle;
     width: 50%;
-  }
-  /* line 181, ../sass/_projects_content.scss */
-  .project-content > .table .content > .description {
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
-    padding: 0;
-  }
-  /* line 187, ../sass/_projects_content.scss */
-  .project-content > .table .content > .description::after, .project-content > .table .content > .description::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 30px;
-    left: 0;
-  }
-  /* line 195, ../sass/_projects_content.scss */
-  .project-content > .table .content > .description::after {
-    top: 0;
-    background-image: linear-gradient(white, transparent);
-  }
-  /* line 200, ../sass/_projects_content.scss */
-  .project-content > .table .content > .description::before {
-    bottom: 0;
-    background-image: linear-gradient(transparent, white);
-  }
-  /* line 205, ../sass/_projects_content.scss */
-  .project-content > .table .content > .description .text {
-    max-height: 250px;
-    overflow-y: scroll;
-    padding: 20px;
   }
 }
 /* La partie compétences de la page */
