@@ -755,15 +755,16 @@ nav.opened ul > li > a {
   position: relative;
 }
 /* line 17, ../sass/_skills.scss */
-.skills ul .tooltip h3 {
+.skills ul .tooltip .title {
   color: #ECEFF1;
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
   display: inline-block;
+  outline: none;
 }
-/* line 25, ../sass/_skills.scss */
-.skills ul .tooltip p {
+/* line 26, ../sass/_skills.scss */
+.skills ul .tooltip .content {
   background-color: #263238;
   border-radius: 5px;
   color: #ECEFF1;
@@ -776,38 +777,38 @@ nav.opened ul > li > a {
   z-index: 30;
   opacity: 0;
 }
-/* line 38, ../sass/_skills.scss */
-.skills ul .tooltip p.top, .skills ul .tooltip p.bottom {
+/* line 39, ../sass/_skills.scss */
+.skills ul .tooltip .content.top, .skills ul .tooltip .content.bottom {
   left: 50%;
   transform: translateX(-50%);
 }
-/* line 42, ../sass/_skills.scss */
-.skills ul .tooltip p.top::after, .skills ul .tooltip p.bottom::after {
+/* line 43, ../sass/_skills.scss */
+.skills ul .tooltip .content.top::after, .skills ul .tooltip .content.bottom::after {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   left: 50%;
   transform: translateX(-50%);
 }
-/* line 50, ../sass/_skills.scss */
-.skills ul .tooltip p.top {
+/* line 51, ../sass/_skills.scss */
+.skills ul .tooltip .content.top {
   bottom: 50px;
 }
-/* line 53, ../sass/_skills.scss */
-.skills ul .tooltip p.top::after {
+/* line 54, ../sass/_skills.scss */
+.skills ul .tooltip .content.top::after {
   border-top: 10px solid #263238;
   top: 100%;
 }
-/* line 59, ../sass/_skills.scss */
-.skills ul .tooltip p.bottom {
+/* line 60, ../sass/_skills.scss */
+.skills ul .tooltip .content.bottom {
   top: 50px;
 }
-/* line 62, ../sass/_skills.scss */
-.skills ul .tooltip p.bottom::after {
+/* line 63, ../sass/_skills.scss */
+.skills ul .tooltip .content.bottom::after {
   border-bottom: 10px solid #263238;
   top: -10px;
 }
-/* line 68, ../sass/_skills.scss */
-.skills ul .tooltip p::after {
+/* line 69, ../sass/_skills.scss */
+.skills ul .tooltip .content::after {
   content: "";
   position: absolute;
   left: 0;
@@ -815,13 +816,13 @@ nav.opened ul > li > a {
 }
 
 @media screen and (min-width: 680px) {
-  /* line 81, ../sass/_skills.scss */
+  /* line 82, ../sass/_skills.scss */
   .skills ul > .tooltip {
     width: 33.333%;
   }
 }
 @media screen and (min-width: 800px) {
-  /* line 89, ../sass/_skills.scss */
+  /* line 90, ../sass/_skills.scss */
   .skills ul > .tooltip {
     width: 25%;
   }

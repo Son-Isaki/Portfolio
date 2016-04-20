@@ -74,6 +74,8 @@ $(document).ready(function () {
                 $(this).find("span").html("J'aime ce projet");
             }
         });
+
+        // ajax
     }
 
     doLike();

@@ -14,15 +14,16 @@
       margin: 20px 0;
       position: relative;
 
-      h3 {
+      .title {
         color: $white;
         text-transform: uppercase;
         text-align: center;
         cursor: pointer;
         display: inline-block;
+        outline: none;
       }
 
-      p {
+      .content {
         background-color: $black;
         border-radius: 5px;
         color: $white;

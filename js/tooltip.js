@@ -8,30 +8,42 @@ $(document).ready(function () {
 
     $(".tooltip").each(function () {
         var parent = $(this);
-        var title = parent.find("h3");
+        var title = parent.find(".title");
 
-        parent.data("status", "close");
+        //parent.data("status", "close");
 
-        title.click(function () {
-            if (parent.data("status") == "close") {
-                open(parent);
-            }
-            else {
-                close(parent);
-            }
+        /*title.click(function () {
+         if (parent.data("status") == "close") {
+         open(parent);
+         }
+         else {
+         close(parent);
+         }
+         update();
+         });*/
+
+        title.focus(function () {
+            console.log("blah");
+            open(parent);
+            update();
+        });
+
+        title.blur(function () {
+            console.log("blah");
+            close(parent);
             update();
         });
     });
 
     function open(parent) {
-        var content = parent.find("p");
+        var content = parent.find(".content");
 
-        $(".tooltip").each(function () {
-            $(this).data("status", "close");
-            close($(this));
-        });
+        /*$(".tooltip").each(function () {
+         $(this).data("status", "close");
+         close($(this));
+         });
 
-        parent.data("status", "open");
+         parent.data("status", "open");*/
 
         content.css("display", "block");
         content.stop().animate({
@@ -42,9 +54,9 @@ $(document).ready(function () {
     }
 
     function close(parent) {
-        var content = parent.find("p");
+        var content = parent.find(".content");
 
-        parent.data("status", "close");
+        //parent.data("status", "close");
 
         content.stop().animate({
             opacity: 0
@@ -56,7 +68,7 @@ $(document).ready(function () {
 
     function update() {
         $(".tooltip").each(function () {
-            var content = $(this).find("p");
+            var content = $(this).find(".content");
             var scrollY = $(window).scrollTop();
 
             if (content.offset().top - 20 < scrollY + $("nav").height()) {
